@@ -22,22 +22,19 @@
       margin-top: 30px;
       padding: 10px;
     }
-    .btn-link {
-      display: inline-block;
-      background-color: #4B0082;
-      color: white;
-      padding: 10px 16px;
-      margin: 6px 0;
-      border-radius: 30px;
-      text-decoration: none;
+    .contact-item {
+      display: flex;
+      align-items: center;
+      margin: 10px 0;
       font-size: 16px;
-      transition: background-color 0.3s ease;
+      color: #333;
     }
-    .btn-link:hover {
-      background-color: #6a0dad;
-    }
-    .btn-icon {
-      margin-left: 8px;
+    .contact-item i {
+      margin-left: 10px;
+      color: #4B0082;
+      font-size: 20px;
+      width: 25px;
+      text-align: center;
     }
   </style>
   <!-- קישורים לאייקונים של Font Awesome -->
@@ -51,7 +48,9 @@
   <p>את דרכי בעולם הצילום התחלתי לפני כעשור כצלמת מקצועית עם מצלמות DSLR. ככל שעבר הזמן, שמתי לב לתופעה מעניינת - יותר ויותר אנשים מצלמים בסמארטפונים, אך התוצאות לא משקפות את הפוטנציאל האדיר שיש במכשירים הללו.</p>
   <p>כך נולדה התשוקה שלי להנגיש את עולם הצילום האיכותי לכל מי שמחזיק סמארטפון. הקמתי את סדנאות הצילום בנייד מתוך אמונה שכל אחד יכול לצלם תמונות מקצועיות, בלי צורך בציוד יקר או ידע טכני מורכב.</p>
 
-  
+  <h2>הגישה שלי</h2>
+  <p>במהלך השנים פיתחתי שיטה ייחודית ללימוד צילום בסמארטפון, המשלבת טכניקות מקצועיות עם גישה סובלנית וייחודית לכל אחד.</p>
+
   <h2>הגישה שלי לצילום</h2>
   <p><strong>אני מאמינה שצילום הוא אמנות נגישה שצריכה להיות פתוחה לכולם.</strong> הגישה שלי מבוססת על שלושה עקרונות מרכזיים:</p>
   <ul>
@@ -65,21 +64,21 @@
 
   <div class="contact">
     <h2>צור קשר</h2>
-    <a class="btn-link" href="tel:0501234567">
-      <i class="fas fa-phone btn-icon"></i>050-1234567
-    </a><br>
-    <a class="btn-link" href="mailto:esti@example.com">
-      <i class="fas fa-envelope btn-icon"></i>esti@example.com
-    </a><br>
-    <a class="btn-link" href="https://www.facebook.com/esti.photo" target="_blank">
-      <i class="fab fa-facebook btn-icon"></i>Facebook
-    </a><br>
-    <a class="btn-link" href="https://www.instagram.com/esti.photo" target="_blank">
-      <i class="fab fa-instagram btn-icon"></i>Instagram
-    </a><br>
-    <a class="btn-link" href="https://linktr.ee/esti_photo" target="_blank">
-      <i class="fas fa-link btn-icon"></i>כל הקישורים שלי (Linktree)
-    </a>
+    <div class="contact-item">
+      <i class="fas fa-phone"></i>052-7201140
+    </div>
+    <div class="contact-item">
+      <i class="fas fa-envelope"></i>esti.lahat.photo@gmail.com
+    </div>
+    <div class="contact-item">
+      <i class="fab fa-facebook"></i>facebook.com/esti.lahat.photo/
+    </div>
+    <div class="contact-item">
+      <i class="fab fa-instagram"></i>instagram.com/esti.lahat.photo
+    </div>
+    <div class="contact-item">
+      <i class="fas fa-link"></i>linktr.ee/esti_photo
+    </div>
   </div>
 </body>
 </html>
