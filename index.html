@@ -3,6 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <title>אודות אסתי להט</title>
+
+  <!-- עיצוב כללי + רספונסיביות -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -11,36 +15,76 @@
       margin: 20px;
       background-color: #f9f9f9;
     }
+
     h1, h2 {
       color: #4B0082; /* סגול */
     }
-    p {
+
+    p, li {
       color: #555;
       line-height: 1.6;
     }
+
+    ul {
+      padding-right: 20px;
+    }
+
     .contact {
       margin-top: 30px;
       padding: 10px;
     }
+
     .contact-item {
       display: flex;
       align-items: center;
+      gap: 10px;
       margin: 10px 0;
       font-size: 16px;
       color: #333;
+      flex-wrap: wrap;
     }
+
+    .contact-item a {
+      text-decoration: none;
+      color: #333;
+    }
+
     .contact-item i {
-      margin-left: 10px;
       color: #4B0082;
       font-size: 20px;
-      width: 25px;
-      text-align: center;
+    }
+
+    @media (max-width: 600px) {
+      body {
+        margin: 10px;
+        font-size: 16px;
+      }
+
+      h1 {
+        font-size: 22px;
+      }
+
+      h2 {
+        font-size: 18px;
+      }
+
+      .contact-item {
+        flex-direction: row;
+        flex-wrap: wrap;
+        font-size: 15px;
+      }
+
+      .contact-item i {
+        font-size: 18px;
+      }
     }
   </style>
-  <!-- קישורים לאייקונים של Font Awesome -->
+
+  <!-- ספריית אייקונים Font Awesome -->
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
+
   <h1>אודות אסתי להט</h1>
   <p>שלום! אני אסתי להט, צלמת מקצועית המתמחה בצילום בסמארטפון. אני מאמינה שכל אחד יכול ללמוד לצלם תמונות מדהימות בעזרת הכלים שיש לו ביד.</p>
 
@@ -64,26 +108,35 @@
 
   <div class="contact">
     <h2>צור קשר</h2>
-    <div class="contact-item">
-      <i class="fas fa-phone"></i>052-7201140
-    </div>
-    <div class="contact-item">
-      <i class="fas fa-envelope"></i>esti.lahat.photo@gmail.com
-    </div>
-    
-<div class="contact-item">
-  <i class="fab fa-facebook"></i>
-  <a href="https://www.facebook.com/esti.lahat.photo/" target="_blank" style="text-decoration: none; color: #333;">
-    facebook.com/esti.lahat.photo
-  </a>
-</div>
 
     <div class="contact-item">
-      <i class="fab fa-instagram"></i>instagram.com/esti.lahat.photo
+      052-720-1140 <i class="fas fa-phone"></i>
     </div>
+
     <div class="contact-item">
-      <i class="fas fa-link"></i>linktr.ee/esti_photo
+      esti.lahat.photo@gmail.com <i class="fas fa-envelope"></i>
+    </div>
+
+    <div class="contact-item">
+      @esti_feder_lahat
+      <a href="https://www.instagram.com/esti.feder_lahat" target="_blank" rel="noopener noreferrer">
+        <i class="fab fa-instagram"></i>
+      </a>
+    </div>
+
+    <div class="contact-item">
+      @esti.lahat.photo
+      <a href="https://www.facebook.com/esti.lahat.photo/" target="_blank" rel="noopener noreferrer">
+        <i class="fab fa-facebook"></i>
+      </a>
+    </div>
+
+    <div class="contact-item">
+      <a href="https://linktr.ee/esti_photo" target="_blank" rel="noopener noreferrer">
+        → Linktree <i class="fas fa-link"></i>
+      </a>
     </div>
   </div>
+
 </body>
 </html>
