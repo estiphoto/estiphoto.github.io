@@ -117,45 +117,43 @@
       display: block;
     }
 
+    /* עיצוב תווית הניסיון - הותאם לגודל ריבועי הנתונים */
     .experience-label {
       position: absolute;
       bottom: 20px; /* מיקום התווית בתחתית */
-      left: 20px; /* מיקום התווית משמאל */
+      left: 20px; /* מיקום התווית משמאל - כמו בסקיצה */
       background-color: #4B0082; /* רקע סגול */
       color: white; /* טקסט לבן */
-      font-size: 16px;
-      padding: 8px 16px;
-      border-radius: 10px;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+      font-size: 1.2em; /* גודל טקסט גדול יותר, דומה לריבועי הנתונים */
+      padding: 15px 25px; /* ריפוד גדול יותר, דומה לריבועי הנתונים */
+      border-radius: 15px; /* פינות מעוגלות, דומה לריבועי הנתונים */
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); /* צל דומה לריבועי הנתונים */
       font-weight: bold;
       white-space: nowrap;
+      display: flex; /* כדי למרכז את הטקסט בתוכו אם צריך */
+      align-items: center;
+      justify-content: center;
     }
 
-    /* --- חלק תחתון (Additional Info & Contact) --- */
-    .footer-section {
-      background-color: #ffffff; /* צבע רקע לבן */
-      padding-top: 60px;
-      padding-bottom: 60px;
-    }
-
-    /* ריבועי הנתונים */
+    /* ריבועי הנתונים - הועברו לכאן */
     .stats-container {
       display: flex;
-      justify-content: center; /* מרכוז הריבועים */
-      gap: 25px; /* מרווח גדול יותר בין הריבועים */
-      margin-top: 40px;
-      margin-bottom: 50px; /* רווח גדול לאחר הריבועים */
+      justify-content: flex-start; /* יישור לשמאל, כמו בסקיצה */
+      gap: 20px; /* מרווח בין הריבועים */
+      margin-top: 30px; /* רווח מעל הריבועים */
+      margin-bottom: 30px; /* רווח מתחת לריבועים */
       flex-wrap: wrap; /* יירדו שורה במובייל */
     }
 
     .stat-box {
       background-color: #f0e6fa; /* רקע סגול בהיר מאוד */
       color: #4B0082; /* טקסט סגול כהה */
-      padding: 25px 30px; /* ריפוד גדול יותר לריבועים */
+      padding: 15px 25px; /* ריפוד לריבועים */
       border-radius: 15px;
       text-align: center;
-      flex: 1 1 150px; /* גמישות: יתפוס רוחב מינימלי 150px ויגדל */
-      max-width: 200px; /* רוחב מקסימלי לריבוע */
+      flex: 0 0 auto; /* לא יתפוס רוחב שווה, יתכווץ לפי התוכן */
+      min-width: 130px; /* רוחב מינימלי לריבוע */
+      max-width: 180px; /* רוחב מקסימלי לריבוע */
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
       font-weight: bold;
       display: flex;
@@ -165,13 +163,20 @@
     }
 
     .stat-number {
-      font-size: 2.5em; /* מספרים גדולים יותר */
+      font-size: 2.2em; /* גודל מספרים */
       margin-bottom: 5px;
     }
 
     .stat-description {
-      font-size: 1em; /* גודל טקסט לתיאור */
+      font-size: 0.9em; /* גודל טקסט לתיאור */
       color: #666;
+    }
+
+    /* --- חלק תחתון (Additional Info & Contact) --- */
+    .footer-section {
+      background-color: #ffffff; /* צבע רקע לבן */
+      padding-top: 60px;
+      padding-bottom: 60px;
     }
 
     /* קטע יצירת הקשר */
@@ -258,20 +263,25 @@
       }
 
       .experience-label {
-        font-size: 14px;
-        padding: 6px 12px;
+        font-size: 1em; /* מעט קטן יותר במובייל כדי לא לתפוס יותר מדי מקום */
+        padding: 10px 20px;
         bottom: 10px;
         left: 10px;
       }
 
+      .stats-container {
+        justify-content: center; /* מרכוז במובייל */
+        gap: 15px;
+      }
+
       .stat-box {
         flex: 1 1 45%; /* שני ריבועים בשורה במובייל */
-        padding: 20px;
+        padding: 15px 20px;
         font-size: 0.9em;
       }
 
       .stat-number {
-        font-size: 2em;
+        font-size: 1.8em;
       }
 
       .contact-item {
@@ -304,11 +314,27 @@
       <h2>הסיפור שלי</h2>
       <p>את דרכי בעולם הצילום התחלתי לפני כעשור כצלמת מקצועית עם מצלמות DSLR. ככל שעבר הזמן, שמתי לב לתופעה מעניינת - יותר ויותר אנשים מצלמים בסמארטפונים, אך התוצאות לא משקפות את הפוטנציאל האדיר שיש במכשירים הללו.</p>
       <p>כך נולדה התשוקה שלי להנגיש את עולם הצילום האיכותי לכל מי שמחזיק סמארטפון. הקמתי את סדנאות הצילום בנייד מתוך אמונה שכל אחד יכול לצלם תמונות מקצועיות, בלי צורך בציוד יקר או ידע טכני מורכב.</p>
+
+      <div class="stats-container">
+        <div class="stat-box">
+          <div class="stat-number">100%</div>
+          <div class="stat-description">שביעות רצון</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-number">+30</div>
+          <div class="stat-description">סדנאות</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-number">+200</div>
+          <div class="stat-description">בוגרי סדנאות</div>
+        </div>
+      </div>
     </div>
     <div class="about-image-column">
       <div class="about-image-container">
         <img src="SALI-093_SMALL.jpg" alt="תמונה של אסתי">
-        <div class="experience-label">מעל 3 שנות ניסיון</div> </div>
+        <div class="experience-label">מעל 3 שנות ניסיון</div>
+      </div>
     </div>
   </div>
 
@@ -323,21 +349,6 @@
 
     <h2>למי זה מתאים?</h2>
     <p>הסדנאות שלי מיועדות לכל מי שמעוניין לשפר את כישורי הצילום שלו, בין אם אתה מתחיל או בעל ניסיון. אני מציעה סדנאות פרטיות, קבוצתיות ואירועים מיוחדים.</p>
-
-    <div class="stats-container">
-      <div class="stat-box">
-        <div class="stat-number">100%</div>
-        <div class="stat-description">שביעות רצון</div>
-      </div>
-      <div class="stat-box">
-        <div class="stat-number">+30</div>
-        <div class="stat-description">סדנאות</div>
-      </div>
-      <div class="stat-box">
-        <div class="stat-number">+200</div>
-        <div class="stat-description">בוגרי סדנאות</div>
-      </div>
-    </div>
 
     <div class="contact">
       <h2>צור קשר</h2>
