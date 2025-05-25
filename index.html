@@ -6,28 +6,29 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <style>
+    /* הגדרות בסיסיות לכל הדף */
     body {
       font-family: Arial, sans-serif;
-      direction: rtl;
-      text-align: right;
-      margin: 0; /* נוריד את המארג'ין הכללי לטובת מרווחים פנימיים בקונטיינר */
-      background-color: #f9f9f9;
+      direction: rtl; /* כיווניות מימין לשמאל */
+      text-align: right; /* יישור טקסט לימין */
+      margin: 0; /* מחיקת מרווחים חיצוניים של הדפדפן */
+      background-color: #f9f9f9; /* צבע רקע כללי מחוץ לחלקים */
       line-height: 1.6;
       color: #333;
     }
 
     h1, h2 {
       color: #4B0082; /* סגול כהה */
+      margin-top: 0; /* מחיקת מרווח עליון כברירת מחדל */
     }
 
     h1 {
-      font-size: 2.2em; /* גודל כותרת ראשית */
+      font-size: 2.2em;
       margin-bottom: 10px;
     }
 
     h2 {
-      font-size: 1.8em; /* גודל כותרת משנית */
-      margin-top: 0;
+      font-size: 1.8em;
       margin-bottom: 15px;
     }
 
@@ -40,47 +41,74 @@
       margin-bottom: 20px;
     }
 
-    /* קונטיינר ראשי לפריסת שני טורים */
-    .main-content-wrapper {
-      display: flex;
-      flex-direction: column; /* ברירת מחדל לטורים בעריכה ניידת */
-      align-items: flex-start; /* יישור פריטים להתחלה */
-      max-width: 1200px; /* רוחב מקסימלי לתוכן האתר */
-      margin: 40px auto; /* מרכוז הקונטיינר בדף ורווח מלמעלה/למטה */
-      background-color: #fff; /* רקע לבן לתוכן הראשי */
-      border-radius: 20px;
-      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08); /* צל עדין סביב כל הדף */
-      overflow: hidden; /* לוודא שה-border-radius עובד טוב */
-      padding: 30px; /* ריפוד פנימי בתוך הקונטיינר */
+    /* הגדרות כלליות לקונטיינרים של החלקים */
+    .section-container {
+      max-width: 1200px; /* רוחב מקסימלי לתוכן בכל חלק */
+      margin: 0 auto; /* מרכוז החלקים בדף */
+      padding: 40px 20px; /* ריפוד פנימי לכל חלק */
+      box-sizing: border-box; /* לוודא שהריפוד לא מגדיל את הרוחב מעבר ל-max-width */
     }
 
-    .content-area {
-      display: flex;
-      flex-direction: column; /* ברירת מחדל לטורים בעריכה ניידת */
-      width: 100%; /* תופס 100% ב-mobile */
+    /* --- חלק עליון (Header Section) --- */
+    .header-section {
+      background-color: #fdfdf5; /* צבע רקע שמנת */
+      text-align: center; /* יישור כללי למרכז בחלק זה */
+      padding-top: 60px; /* רווח עליון גדול יותר */
+      padding-bottom: 60px; /* רווח תחתון גדול יותר */
     }
 
-    .text-column {
-      flex: 1; /* תופס את המקום שנותר */
-      padding: 0 20px 20px 0; /* ריפוד מימין ומלמטה (כי התמונה תהיה מימין) */
+    .header-logo-title {
+      display: flex;
+      flex-direction: column; /* הלוגו והכותרת אחד מתחת לשני במובייל */
+      align-items: center; /* מרכוז אופקי */
+      justify-content: center;
+      gap: 15px;
+      margin-bottom: 15px;
     }
 
-    .image-column {
-      flex: 1; /* תופס את המקום שנותר */
+    .logo-small {
+      max-width: 100px; /* גודל לוגו טיפה יותר גדול */
+      height: auto;
+    }
+
+    .opening-text {
+      font-size: 1.2em;
+      line-height: 1.8;
+      max-width: 700px; /* הגבלת רוחב לפסקת הפתיחה */
+      margin: 0 auto; /* מרכוז הפסקה */
+    }
+
+    /* --- חלק אמצעי (About Section - Image & Text) --- */
+    .about-section {
+      background-color: #fffada; /* צבע רקע צהוב בהיר מאוד */
       display: flex;
-      justify-content: flex-end; /* יישור התמונה לצד ימין */
-      align-items: flex-start;
-      padding: 0 0 20px 20px; /* ריפוד משמאל ומלמטה */
-      order: -1; /* בברירת מחדל (מובייל) נציג את התמונה מעל הטקסט. נשנה ב-desktop */
+      flex-direction: column; /* עמודות אחת מתחת לשנייה במובייל */
+      align-items: center; /* יישור מרכזי */
+      gap: 40px; /* מרווח בין העמודות */
+      padding-top: 60px;
+      padding-bottom: 60px;
+    }
+
+    .about-image-column, .about-text-column {
+      flex: 1; /* כל עמודה תתפוס מקום שווה בדסקטופ */
+      width: 100%; /* רוחב מלא במובייל */
+    }
+
+    .about-image-column {
+      order: -1; /* התמונה תופיע מעל הטקסט במובייל */
+      display: flex;
+      justify-content: center; /* מרכוז התמונה במובייל */
+      padding-left: 20px; /* ריפוד כדי שהתווית לא תיצמד לקצה */
+      padding-right: 20px; /* ריפוד כדי שהתווית לא תיצמד לקצה */
     }
 
     .about-image-container {
-      max-width: 450px; /* רוחב מקסימלי לתמונה הגדולה */
-      width: 100%; /* רוחב תמונה רספונסיבי */
+      max-width: 500px; /* גודל מקסימלי לתמונה הגדולה */
+      width: 100%; /* תמונה רספונסיבית */
       position: relative;
       border-radius: 20px;
       overflow: hidden;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1); /* צל סביב התמונה */
     }
 
     .about-image-container img {
@@ -91,9 +119,9 @@
 
     .experience-label {
       position: absolute;
-      bottom: 20px; /* קצת יותר למעלה מהתחתית */
-      left: 20px; /* ממוקם בצד שמאל-תחתון של התמונה */
-      background-color: #4B0082; /* רקע סגול כהה */
+      bottom: 20px; /* מיקום התווית בתחתית */
+      left: 20px; /* מיקום התווית משמאל */
+      background-color: #4B0082; /* רקע סגול */
       color: white; /* טקסט לבן */
       font-size: 16px;
       padding: 8px 16px;
@@ -103,27 +131,32 @@
       white-space: nowrap;
     }
 
-    /* קטע הנתונים המעוצב */
+    /* --- חלק תחתון (Additional Info & Contact) --- */
+    .footer-section {
+      background-color: #ffffff; /* צבע רקע לבן */
+      padding-top: 60px;
+      padding-bottom: 60px;
+    }
+
+    /* ריבועי הנתונים */
     .stats-container {
       display: flex;
-      justify-content: space-around; /* רווח שווה בין האלמנטים */
-      gap: 15px; /* מרווח בין הריבועים */
-      margin-top: 30px;
-      margin-bottom: 30px;
+      justify-content: center; /* מרכוז הריבועים */
+      gap: 25px; /* מרווח גדול יותר בין הריבועים */
+      margin-top: 40px;
+      margin-bottom: 50px; /* רווח גדול לאחר הריבועים */
       flex-wrap: wrap; /* יירדו שורה במובייל */
-      width: 100%; /* תופס את כל הרוחב הזמין */
     }
 
     .stat-box {
       background-color: #f0e6fa; /* רקע סגול בהיר מאוד */
       color: #4B0082; /* טקסט סגול כהה */
-      padding: 20px;
+      padding: 25px 30px; /* ריפוד גדול יותר לריבועים */
       border-radius: 15px;
       text-align: center;
-      flex: 1; /* יתפוס מקום שווה בפריסה */
-      min-width: 120px; /* רוחב מינימלי לריבוע */
-      max-width: 180px; /* רוחב מקסימלי לריבוע בדסקטופ */
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+      flex: 1 1 150px; /* גמישות: יתפוס רוחב מינימלי 150px ויגדל */
+      max-width: 200px; /* רוחב מקסימלי לריבוע */
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
       font-weight: bold;
       display: flex;
       flex-direction: column;
@@ -132,28 +165,32 @@
     }
 
     .stat-number {
-      font-size: 2.2em;
+      font-size: 2.5em; /* מספרים גדולים יותר */
       margin-bottom: 5px;
     }
 
     .stat-description {
-      font-size: 0.9em;
+      font-size: 1em; /* גודל טקסט לתיאור */
       color: #666;
     }
 
     /* קטע יצירת הקשר */
     .contact {
       margin-top: 30px;
-      padding: 10px 0;
+      padding-top: 20px; /* רווח מעל קו ההפרדה */
       border-top: 1px solid #eee; /* קו הפרדה עליון */
+    }
+
+    .contact h2 {
+      margin-top: 0; /* לוודא שאין רווח כפול אחרי קו ההפרדה */
     }
 
     .contact-item {
       display: flex;
       align-items: center;
       gap: 10px;
-      margin: 10px 0;
-      font-size: 16px;
+      margin: 12px 0; /* רווח גדול יותר בין פריטי קשר */
+      font-size: 1.1em; /* פונט גדול יותר לפריטי קשר */
       color: #333;
       flex-wrap: wrap;
     }
@@ -161,75 +198,88 @@
     .contact-item a {
       text-decoration: none;
       color: #333;
+      transition: color 0.3s ease; /* אנימציה עדינה בלחיצה */
+    }
+    .contact-item a:hover {
+      color: #4B0082; /* צבע בהובר */
     }
 
     .contact-item i {
-      color: #4B0082; /* סגול כהה */
-      font-size: 20px;
+      color: #4B0082; /* סגול כהה לאייקונים */
+      font-size: 1.5em; /* גודל גדול יותר לאייקונים */
     }
 
-    /* מדיה קוואריז להתאמה למסכים גדולים יותר (מעל 768px) */
+    /* --- מדיה קוואריז להתאמה לדסקטופ (מעל 768px) --- */
     @media (min-width: 768px) {
-      .main-content-wrapper {
-        flex-direction: row; /* ב-desktop הופך לשני טורים */
-        padding: 50px; /* ריפוד גדול יותר לדף בדסקטופ */
+      .header-logo-title {
+        flex-direction: row; /* לוגו וכותרת בשורה אחת בדסקטופ */
       }
 
-      .content-area {
-        flex-direction: row; /* ב-desktop הופך לשני טורים בתוך הקונטיינר הראשי */
+      .about-section {
+        flex-direction: row; /* העמודות בצדדים בדסקטופ */
+        align-items: flex-start; /* יישור לראש העמודה */
       }
 
-      .text-column {
-        padding: 0 40px 0 0; /* רווח גדול יותר מימין לטקסט */
+      .about-image-column {
+        order: 0; /* חזרה לסדר הרגיל (תמונה מימין) */
+        padding-left: 40px; /* מרווח גדול יותר בצד שמאל של התמונה */
       }
 
-      .image-column {
-        order: 1; /* התמונה תופיע מימין ב-desktop */
-        padding: 0 0 0 40px; /* רווח גדול יותר משמאל לתמונה */
+      .about-text-column {
+        padding-right: 40px; /* מרווח גדול יותר בצד ימין של הטקסט */
       }
     }
 
-    /* מדיה קוואריז כלליות להתאמה למובייל */
+    /* --- מדיה קוואריז להתאמה למובייל (עד 600px) --- */
     @media (max-width: 600px) {
-      body {
-        margin: 0;
-      }
-
-      .main-content-wrapper {
-        margin: 20px auto;
-        padding: 20px;
+      .section-container {
+        padding: 30px 15px; /* ריפוד קטן יותר במובייל */
       }
 
       h1 {
-        font-size: 20px;
+        font-size: 1.8em;
       }
 
       h2 {
-        font-size: 18px;
+        font-size: 1.5em;
       }
 
-      .contact-item {
-        font-size: 15px;
+      .opening-text {
+        font-size: 1em;
       }
 
-      .contact-item i {
-        font-size: 18px;
+      .logo-small {
+        max-width: 80px;
+      }
+
+      .about-image-column {
+        padding-left: 0;
+        padding-right: 0;
       }
 
       .experience-label {
-        font-size: 12px;
-        padding: 4px 10px;
-        bottom: 10px; /* להתאים את המיקום במובייל */
+        font-size: 14px;
+        padding: 6px 12px;
+        bottom: 10px;
         left: 10px;
       }
 
       .stat-box {
         flex: 1 1 45%; /* שני ריבועים בשורה במובייל */
-        max-width: none; /* לבטל הגבלת רוחב */
+        padding: 20px;
+        font-size: 0.9em;
       }
 
-      .text-column, .image-column {
-        padding: 10px 0; /* ריפוד אחיד במובייל */
+      .stat-number {
+        font-size: 2em;
+      }
+
+      .contact-item {
+        font-size: 1em;
+      }
+
+      .contact-item i {
+        font-size: 1.3em;
       }
     }
   </style>
@@ -238,7 +288,7 @@
 </head>
 <body>
 
-  <div class="main-content-wrapper">
+  <div class="section-container header-section">
     <div class="header-logo-title">
       <img src="Esti-perple-logo.png" alt="לוגו אסתי" class="logo-small">
       <h1>לצלם מקצועי עם הנייד שלך</h1>
@@ -247,46 +297,49 @@
       סדנאות צילום חווייתיות בנייד לכל הגילאים לפי קבוצות גיל בהנחיה אישית<br>
       ומקצועית של אסתי להט
     </p>
+  </div>
 
-    <div class="content-area">
-      <div class="text-column">
-        <h2>הסיפור שלי</h2>
-        <p>את דרכי בעולם הצילום התחלתי לפני כעשור כצלמת מקצועית עם מצלמות DSLR. ככל שעבר הזמן, שמתי לב לתופעה מעניינת - יותר ויותר אנשים מצלמים בסמארטפונים, אך התוצאות לא משקפות את הפוטנציאל האדיר שיש במכשירים הללו.</p>
-        <p>כך נולדה התשוקה שלי להנגיש את עולם הצילום האיכותי לכל מי שמחזיק סמארטפון. הקמתי את סדנאות הצילום בנייד מתוך אמונה שכל אחד יכול לצלם תמונות מקצועיות, בלי צורך בציוד יקר או ידע טכני מורכב.</p>
+  <div class="section-container about-section">
+    <div class="about-text-column">
+      <h2>הסיפור שלי</h2>
+      <p>את דרכי בעולם הצילום התחלתי לפני כעשור כצלמת מקצועית עם מצלמות DSLR. ככל שעבר הזמן, שמתי לב לתופעה מעניינת - יותר ויותר אנשים מצלמים בסמארטפונים, אך התוצאות לא משקפות את הפוטנציאל האדיר שיש במכשירים הללו.</p>
+      <p>כך נולדה התשוקה שלי להנגיש את עולם הצילום האיכותי לכל מי שמחזיק סמארטפון. הקמתי את סדנאות הצילום בנייד מתוך אמונה שכל אחד יכול לצלם תמונות מקצועיות, בלי צורך בציוד יקר או ידע טכני מורכב.</p>
+    </div>
+    <div class="about-image-column">
+      <div class="about-image-container">
+        <img src="SALI-093_SMALL.jpg" alt="תמונה של אסתי">
+        <div class="experience-label">מעל 3 שנות ניסיון</div> </div>
+    </div>
+  </div>
 
-        <div class="stats-container">
-          <div class="stat-box">
-            <div class="stat-number">100%</div>
-            <div class="stat-description">שביעות רצון</div>
-          </div>
-          <div class="stat-box">
-            <div class="stat-number">+30</div>
-            <div class="stat-description">סדנאות</div>
-          </div>
-          <div class="stat-box">
-            <div class="stat-number">+200</div>
-            <div class="stat-description">בוגרי סדנאות</div>
-          </div>
-        </div>
+  <div class="section-container footer-section">
+    <h2>הגישה שלי לצילום</h2>
+    <p><strong>אני מאמינה שצילום הוא אמנות נגישה שצריכה להיות פתוחה לכולם.</strong> הגישה שלי מבוססת על שלושה עקרונות מרכזיים:</p>
+    <ul>
+      <li><strong>פשטות</strong> – להפוך מושגים מורכבים לפשוטים להבנה וליישום.</li>
+      <li><strong>יצירתיות</strong> – לעודד חשיבה יצירתית וראייה אמנותית בכל צילום.</li>
+      <li><strong>העצמה וסבלנות</strong> – להעניק כלים וביטחון שמאפשרים הצלחה מיידית.</li>
+    </ul>
 
-        <h2>הגישה שלי לצילום</h2>
-        <p><strong>אני מאמינה שצילום הוא אמנות נגישה שצריכה להיות פתוחה לכולם.</strong> הגישה שלי מבוססת על שלושה עקרונות מרכזיים:</p>
-        <ul>
-          <li><strong>פשטות</strong> – להפוך מושגים מורכבים לפשוטים להבנה וליישום.</li>
-          <li><strong>יצירתיות</strong> – לעודד חשיבה יצירתית וראייה אמנותית בכל צילום.</li>
-          <li><strong>העצמה וסבלנות</strong> – להעניק כלים וביטחון שמאפשרים הצלחה מיידית.</li>
-        </ul>
+    <h2>למי זה מתאים?</h2>
+    <p>הסדנאות שלי מיועדות לכל מי שמעוניין לשפר את כישורי הצילום שלו, בין אם אתה מתחיל או בעל ניסיון. אני מציעה סדנאות פרטיות, קבוצתיות ואירועים מיוחדים.</p>
 
-        <h2>למי זה מתאים?</h2>
-        <p>הסדנאות שלי מיועדות לכל מי שמעוניין לשפר את כישורי הצילום שלו, בין אם אתה מתחיל או בעל ניסיון. אני מציעה סדנאות פרטיות, קבוצתיות ואירועים מיוחדים.</p>
+    <div class="stats-container">
+      <div class="stat-box">
+        <div class="stat-number">100%</div>
+        <div class="stat-description">שביעות רצון</div>
       </div>
-
-      <div class="image-column">
-        <div class="about-image-container">
-          <img src="SALI-093_SMALL.jpg" alt="תמונה של אסתי">
-          <div class="experience-label">מעל 10 שנות ניסיון</div> </div>
+      <div class="stat-box">
+        <div class="stat-number">+30</div>
+        <div class="stat-description">סדנאות</div>
       </div>
-    </div> <div class="contact">
+      <div class="stat-box">
+        <div class="stat-number">+200</div>
+        <div class="stat-description">בוגרי סדנאות</div>
+      </div>
+    </div>
+
+    <div class="contact">
       <h2>צור קשר</h2>
 
       <div class="contact-item">
@@ -317,5 +370,7 @@
         </a>
       </div>
     </div>
-  </div> </body>
+  </div>
+
+</body>
 </html>
