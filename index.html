@@ -15,12 +15,12 @@
     }
 
     h1 {
-      color: #4B0082;
+      color: #4B0082; /* סגול כהה */
       margin: 0;
     }
 
     h2 {
-      color: #4B0082;
+      color: #4B0082; /* סגול כהה */
     }
 
     p, li {
@@ -47,6 +47,42 @@
       height: auto;
     }
 
+    .opening-text {
+      text-align: center;
+      font-size: 18px;
+    }
+
+    .about-image-container {
+      max-width: 320px; /* גודל מקסימלי סביר לתמונה */
+      margin: 30px auto; /* מרכוז התמונה ורווח מעל ומתחת */
+      position: relative;
+      border-radius: 20px;
+      overflow: hidden; /* מבטיח שהתמונה והתווית לא יגלשו מחוץ לפינות המעוגלות */
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* צל עדין סביב התמונה */
+      background-color: #ffffff; /* רקע לבן בתוך הקונטיינר, אם התמונה לא ממלאת הכל */
+      border: 1px solid #eee; /* מסגרת עדינה */
+    }
+
+    .about-image-container img {
+      width: 100%; /* התמונה תמלא את כל רוחב הקונטיינר */
+      height: auto;
+      display: block;
+    }
+
+    .experience-label {
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      background-color: rgba(255, 255, 255, 0.9); /* רקע לבן שקוף חלקית לתווית */
+      color: #4B0082; /* סגול כהה */
+      font-size: 14px;
+      padding: 6px 12px;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      font-weight: bold;
+      white-space: nowrap; /* מונע שבירת שורה בתוך התווית */
+    }
+
     .contact {
       margin-top: 30px;
       padding: 10px;
@@ -68,7 +104,7 @@
     }
 
     .contact-item i {
-      color: #4B0082;
+      color: #4B0082; /* סגול כהה */
       font-size: 20px;
     }
 
@@ -95,10 +131,15 @@
       .contact-item i {
         font-size: 18px;
       }
+
+      .experience-label {
+        font-size: 12px;
+        padding: 4px 10px;
+      }
     }
   </style>
 
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <script src="https://kit.fontawesome.com/645b2069e2.js" crossorigin="anonymous"></script>
 </head>
 <body>
 
@@ -106,7 +147,7 @@
     <img src="Esti-perple-logo.png" alt="לוגו אסתי" class="logo-small">
     <h1>לצלם מקצועי עם הנייד שלך</h1>
   </div>
-  <p style="text-align: center;">
+  <p class="opening-text">
     סדנאות צילום חווייתיות בנייד לכל הגילאים לפי קבוצות גיל בהנחיה אישית<br>
     ומקצועית של אסתי להט
   </p>
@@ -115,7 +156,10 @@
   <p>את דרכי בעולם הצילום התחלתי לפני כעשור כצלמת מקצועית עם מצלמות DSLR. ככל שעבר הזמן, שמתי לב לתופעה מעניינת - יותר ויותר אנשים מצלמים בסמארטפונים, אך התוצאות לא משקפות את הפוטנציאל האדיר שיש במכשירים הללו.</p>
   <p>כך נולדה התשוקה שלי להנגיש את עולם הצילום האיכותי לכל מי שמחזיק סמארטפון. הקמתי את סדנאות הצילום בנייד מתוך אמונה שכל אחד יכול לצלם תמונות מקצועיות, בלי צורך בציוד יקר או ידע טכני מורכב.</p>
 
-  <img src="SALI-093_SMALL.jpg" alt="תמונה של אסתי" style="max-width: 100%; height: auto;">
+  <div class="about-image-container">
+    <img src="SALI-093_SMALL.jpg" alt="תמונה של אסתי">
+    <div class="experience-label">מעל שלוש שנות ניסיון</div>
+  </div>
 
   <h2>הגישה שלי לצילום</h2>
   <p><strong>אני מאמינה שצילום הוא אמנות נגישה שצריכה להיות פתוחה לכולם.</strong> הגישה שלי מבוססת על שלושה עקרונות מרכזיים:</p>
@@ -147,18 +191,3 @@
     </div>
 
     <div class="contact-item">
-      @esti.lahat.photo
-      <a href="https://www.facebook.com/esti.lahat.photo/" target="_blank" rel="noopener noreferrer">
-        <i class="fab fa-facebook"></i>
-      </a>
-    </div>
-
-    <div class="contact-item">
-      <a href="https://linktr.ee/esti_photo" target="_blank" rel="noopener noreferrer">
-        → Linktree <i class="fas fa-link"></i>
-      </a>
-    </div>
-  </div>
-
-</body>
-</html>
