@@ -10,82 +10,142 @@
       font-family: Arial, sans-serif;
       direction: rtl;
       text-align: right;
-      margin: 20px;
+      margin: 0; /* נוריד את המארג'ין הכללי לטובת מרווחים פנימיים בקונטיינר */
       background-color: #f9f9f9;
+      line-height: 1.6;
+      color: #333;
+    }
+
+    h1, h2 {
+      color: #4B0082; /* סגול כהה */
     }
 
     h1 {
-      color: #4B0082; /* סגול כהה */
-      margin: 0;
+      font-size: 2.2em; /* גודל כותרת ראשית */
+      margin-bottom: 10px;
     }
 
     h2 {
-      color: #4B0082; /* סגול כהה */
+      font-size: 1.8em; /* גודל כותרת משנית */
+      margin-top: 0;
+      margin-bottom: 15px;
     }
 
     p, li {
       color: #555;
-      line-height: 1.6;
     }
 
     ul {
       padding-right: 20px;
+      margin-bottom: 20px;
     }
 
-    .header-logo-title {
+    /* קונטיינר ראשי לפריסת שני טורים */
+    .main-content-wrapper {
       display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 15px;
-      margin-bottom: 15px;
-      flex-wrap: wrap;
-      text-align: center;
+      flex-direction: column; /* ברירת מחדל לטורים בעריכה ניידת */
+      align-items: flex-start; /* יישור פריטים להתחלה */
+      max-width: 1200px; /* רוחב מקסימלי לתוכן האתר */
+      margin: 40px auto; /* מרכוז הקונטיינר בדף ורווח מלמעלה/למטה */
+      background-color: #fff; /* רקע לבן לתוכן הראשי */
+      border-radius: 20px;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08); /* צל עדין סביב כל הדף */
+      overflow: hidden; /* לוודא שה-border-radius עובד טוב */
+      padding: 30px; /* ריפוד פנימי בתוך הקונטיינר */
     }
 
-    .logo-small {
-      max-width: 80px;
-      height: auto;
+    .content-area {
+      display: flex;
+      flex-direction: column; /* ברירת מחדל לטורים בעריכה ניידת */
+      width: 100%; /* תופס 100% ב-mobile */
     }
 
-    .opening-text {
-      text-align: center;
-      font-size: 18px;
+    .text-column {
+      flex: 1; /* תופס את המקום שנותר */
+      padding: 0 20px 20px 0; /* ריפוד מימין ומלמטה (כי התמונה תהיה מימין) */
+    }
+
+    .image-column {
+      flex: 1; /* תופס את המקום שנותר */
+      display: flex;
+      justify-content: flex-end; /* יישור התמונה לצד ימין */
+      align-items: flex-start;
+      padding: 0 0 20px 20px; /* ריפוד משמאל ומלמטה */
+      order: -1; /* בברירת מחדל (מובייל) נציג את התמונה מעל הטקסט. נשנה ב-desktop */
     }
 
     .about-image-container {
-      max-width: 320px; /* גודל מקסימלי סביר לתמונה */
-      margin: 30px auto; /* מרכוז התמונה ורווח מעל ומתחת */
+      max-width: 450px; /* רוחב מקסימלי לתמונה הגדולה */
+      width: 100%; /* רוחב תמונה רספונסיבי */
       position: relative;
       border-radius: 20px;
-      overflow: hidden; /* מבטיח שהתמונה והתווית לא יגלשו מחוץ לפינות המעוגלות */
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* צל עדין סביב התמונה */
-      background-color: #ffffff; /* רקע לבן בתוך הקונטיינר, אם התמונה לא ממלאת הכל */
-      border: 1px solid #eee; /* מסגרת עדינה */
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     }
 
     .about-image-container img {
-      width: 100%; /* התמונה תמלא את כל רוחב הקונטיינר */
+      width: 100%;
       height: auto;
       display: block;
     }
 
     .experience-label {
       position: absolute;
-      bottom: 10px;
-      right: 10px;
-      background-color: rgba(255, 255, 255, 0.9); /* רקע לבן שקוף חלקית לתווית */
-      color: #4B0082; /* סגול כהה */
-      font-size: 14px;
-      padding: 6px 12px;
+      bottom: 20px; /* קצת יותר למעלה מהתחתית */
+      left: 20px; /* ממוקם בצד שמאל-תחתון של התמונה */
+      background-color: #4B0082; /* רקע סגול כהה */
+      color: white; /* טקסט לבן */
+      font-size: 16px;
+      padding: 8px 16px;
       border-radius: 10px;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
       font-weight: bold;
-      white-space: nowrap; /* מונע שבירת שורה בתוך התווית */
+      white-space: nowrap;
     }
 
+    /* קטע הנתונים המעוצב */
+    .stats-container {
+      display: flex;
+      justify-content: space-around; /* רווח שווה בין האלמנטים */
+      gap: 15px; /* מרווח בין הריבועים */
+      margin-top: 30px;
+      margin-bottom: 30px;
+      flex-wrap: wrap; /* יירדו שורה במובייל */
+      width: 100%; /* תופס את כל הרוחב הזמין */
+    }
+
+    .stat-box {
+      background-color: #f0e6fa; /* רקע סגול בהיר מאוד */
+      color: #4B0082; /* טקסט סגול כהה */
+      padding: 20px;
+      border-radius: 15px;
+      text-align: center;
+      flex: 1; /* יתפוס מקום שווה בפריסה */
+      min-width: 120px; /* רוחב מינימלי לריבוע */
+      max-width: 180px; /* רוחב מקסימלי לריבוע בדסקטופ */
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+      font-weight: bold;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .stat-number {
+      font-size: 2.2em;
+      margin-bottom: 5px;
+    }
+
+    .stat-description {
+      font-size: 0.9em;
+      color: #666;
+    }
+
+    /* קטע יצירת הקשר */
     .contact {
       margin-top: 30px;
-      padding: 10px;
+      padding: 10px 0;
+      border-top: 1px solid #eee; /* קו הפרדה עליון */
     }
 
     .contact-item {
@@ -108,14 +168,40 @@
       font-size: 20px;
     }
 
+    /* מדיה קוואריז להתאמה למסכים גדולים יותר (מעל 768px) */
+    @media (min-width: 768px) {
+      .main-content-wrapper {
+        flex-direction: row; /* ב-desktop הופך לשני טורים */
+        padding: 50px; /* ריפוד גדול יותר לדף בדסקטופ */
+      }
+
+      .content-area {
+        flex-direction: row; /* ב-desktop הופך לשני טורים בתוך הקונטיינר הראשי */
+      }
+
+      .text-column {
+        padding: 0 40px 0 0; /* רווח גדול יותר מימין לטקסט */
+      }
+
+      .image-column {
+        order: 1; /* התמונה תופיע מימין ב-desktop */
+        padding: 0 0 0 40px; /* רווח גדול יותר משמאל לתמונה */
+      }
+    }
+
+    /* מדיה קוואריז כלליות להתאמה למובייל */
     @media (max-width: 600px) {
       body {
-        margin: 10px;
-        font-size: 16px;
+        margin: 0;
+      }
+
+      .main-content-wrapper {
+        margin: 20px auto;
+        padding: 20px;
       }
 
       h1 {
-        font-size: 22px;
+        font-size: 20px;
       }
 
       h2 {
@@ -123,8 +209,6 @@
       }
 
       .contact-item {
-        flex-direction: row;
-        flex-wrap: wrap;
         font-size: 15px;
       }
 
@@ -135,6 +219,17 @@
       .experience-label {
         font-size: 12px;
         padding: 4px 10px;
+        bottom: 10px; /* להתאים את המיקום במובייל */
+        left: 10px;
+      }
+
+      .stat-box {
+        flex: 1 1 45%; /* שני ריבועים בשורה במובייל */
+        max-width: none; /* לבטל הגבלת רוחב */
+      }
+
+      .text-column, .image-column {
+        padding: 10px 0; /* ריפוד אחיד במובייל */
       }
     }
   </style>
@@ -143,51 +238,84 @@
 </head>
 <body>
 
-  <div class="header-logo-title">
-    <img src="Esti-perple-logo.png" alt="לוגו אסתי" class="logo-small">
-    <h1>לצלם מקצועי עם הנייד שלך</h1>
-  </div>
-  <p class="opening-text">
-    סדנאות צילום חווייתיות בנייד לכל הגילאים לפי קבוצות גיל בהנחיה אישית<br>
-    ומקצועית של אסתי להט
-  </p>
-
-  <h2>הסיפור שלי</h2>
-  <p>את דרכי בעולם הצילום התחלתי לפני כעשור כצלמת מקצועית עם מצלמות DSLR. ככל שעבר הזמן, שמתי לב לתופעה מעניינת - יותר ויותר אנשים מצלמים בסמארטפונים, אך התוצאות לא משקפות את הפוטנציאל האדיר שיש במכשירים הללו.</p>
-  <p>כך נולדה התשוקה שלי להנגיש את עולם הצילום האיכותי לכל מי שמחזיק סמארטפון. הקמתי את סדנאות הצילום בנייד מתוך אמונה שכל אחד יכול לצלם תמונות מקצועיות, בלי צורך בציוד יקר או ידע טכני מורכב.</p>
-
-  <div class="about-image-container">
-    <img src="SALI-093_SMALL.jpg" alt="תמונה של אסתי">
-    <div class="experience-label">מעל שלוש שנות ניסיון</div>
-  </div>
-
-  <h2>הגישה שלי לצילום</h2>
-  <p><strong>אני מאמינה שצילום הוא אמנות נגישה שצריכה להיות פתוחה לכולם.</strong> הגישה שלי מבוססת על שלושה עקרונות מרכזיים:</p>
-  <ul>
-    <li><strong>פשטות</strong> – להפוך מושגים מורכבים לפשוטים להבנה וליישום.</li>
-    <li><strong>יצירתיות</strong> – לעודד חשיבה יצירתית וראייה אמנותית בכל צילום.</li>
-    <li><strong>העצמה וסבלנות</strong> – להעניק כלים וביטחון שמאפשרים הצלחה מיידית.</li>
-  </ul>
-
-  <h2>למי זה מתאים?</h2>
-  <p>הסדנאות שלי מיועדות לכל מי שמעוניין לשפר את כישורי הצילום שלו, בין אם אתה מתחיל או בעל ניסיון. אני מציעה סדנאות פרטיות, קבוצתיות ואירועים מיוחדים.</p>
-
-  <div class="contact">
-    <h2>צור קשר</h2>
-
-    <div class="contact-item">
-      052-720-1140 <i class="fas fa-phone"></i>
+  <div class="main-content-wrapper">
+    <div class="header-logo-title">
+      <img src="Esti-perple-logo.png" alt="לוגו אסתי" class="logo-small">
+      <h1>לצלם מקצועי עם הנייד שלך</h1>
     </div>
+    <p class="opening-text">
+      סדנאות צילום חווייתיות בנייד לכל הגילאים לפי קבוצות גיל בהנחיה אישית<br>
+      ומקצועית של אסתי להט
+    </p>
 
-    <div class="contact-item">
-      esti.lahat.photo@gmail.com <i class="fas fa-envelope"></i>
+    <div class="content-area">
+      <div class="text-column">
+        <h2>הסיפור שלי</h2>
+        <p>את דרכי בעולם הצילום התחלתי לפני כעשור כצלמת מקצועית עם מצלמות DSLR. ככל שעבר הזמן, שמתי לב לתופעה מעניינת - יותר ויותר אנשים מצלמים בסמארטפונים, אך התוצאות לא משקפות את הפוטנציאל האדיר שיש במכשירים הללו.</p>
+        <p>כך נולדה התשוקה שלי להנגיש את עולם הצילום האיכותי לכל מי שמחזיק סמארטפון. הקמתי את סדנאות הצילום בנייד מתוך אמונה שכל אחד יכול לצלם תמונות מקצועיות, בלי צורך בציוד יקר או ידע טכני מורכב.</p>
+
+        <div class="stats-container">
+          <div class="stat-box">
+            <div class="stat-number">100%</div>
+            <div class="stat-description">שביעות רצון</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-number">+30</div>
+            <div class="stat-description">סדנאות</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-number">+200</div>
+            <div class="stat-description">בוגרי סדנאות</div>
+          </div>
+        </div>
+
+        <h2>הגישה שלי לצילום</h2>
+        <p><strong>אני מאמינה שצילום הוא אמנות נגישה שצריכה להיות פתוחה לכולם.</strong> הגישה שלי מבוססת על שלושה עקרונות מרכזיים:</p>
+        <ul>
+          <li><strong>פשטות</strong> – להפוך מושגים מורכבים לפשוטים להבנה וליישום.</li>
+          <li><strong>יצירתיות</strong> – לעודד חשיבה יצירתית וראייה אמנותית בכל צילום.</li>
+          <li><strong>העצמה וסבלנות</strong> – להעניק כלים וביטחון שמאפשרים הצלחה מיידית.</li>
+        </ul>
+
+        <h2>למי זה מתאים?</h2>
+        <p>הסדנאות שלי מיועדות לכל מי שמעוניין לשפר את כישורי הצילום שלו, בין אם אתה מתחיל או בעל ניסיון. אני מציעה סדנאות פרטיות, קבוצתיות ואירועים מיוחדים.</p>
+      </div>
+
+      <div class="image-column">
+        <div class="about-image-container">
+          <img src="SALI-093_SMALL.jpg" alt="תמונה של אסתי">
+          <div class="experience-label">מעל 10 שנות ניסיון</div> </div>
+      </div>
+    </div> <div class="contact">
+      <h2>צור קשר</h2>
+
+      <div class="contact-item">
+        052-720-1140 <i class="fas fa-phone"></i>
+      </div>
+
+      <div class="contact-item">
+        esti.lahat.photo@gmail.com <i class="fas fa-envelope"></i>
+      </div>
+
+      <div class="contact-item">
+        @esti_feder_lahat
+        <a href="https://www.instagram.com/esti.feder_lahat" target="_blank" rel="noopener noreferrer">
+          <i class="fab fa-instagram"></i>
+        </a>
+      </div>
+
+      <div class="contact-item">
+        @esti.lahat.photo
+        <a href="https://www.facebook.com/esti.lahat.photo/" target="_blank" rel="noopener noreferrer">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </div>
+
+      <div class="contact-item">
+        <a href="https://linktr.ee/esti_photo" target="_blank" rel="noopener noreferrer">
+          → Linktree <i class="fas fa-link"></i>
+        </a>
+      </div>
     </div>
-
-    <div class="contact-item">
-      @esti_feder_lahat
-      <a href="https://www.instagram.com/esti.feder_lahat" target="_blank" rel="noopener noreferrer">
-        <i class="fab fa-instagram"></i>
-      </a>
-    </div>
-
-    <div class="contact-item">
+  </div> </body>
+</html>
