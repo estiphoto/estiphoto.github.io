@@ -4,8 +4,10 @@
   <meta charset="UTF-8">
   <title>צור קשר - אסתי להט</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="style.css"> <style>
-    /* CSS ספציפי לעמוד צור קשר או שיוכל להתמזג ל-style.css */
+  <link rel="stylesheet" href="style.css"> 
+
+  <style>
+    /* CSS ספציפי לעמוד צור קשר. אם מעבירה הכל ל-style.css, אפשר למחוק את ה-style הזה. */
 
     /* הגדרות בסיסיות לכל הדף - כפי שהיו בקובץ הראשי */
     body {
@@ -45,11 +47,24 @@
       box-sizing: border-box; /* לוודא שהריפוד לא מגדיל את הרוחב מעבר ל-max-width */
     }
 
+    /* --- סקשן לוגו עליון --- */
+    .top-logo-section {
+        background-color: #fdfdf5; /* צבע רקע שמנת כמו ה-header-section */
+        text-align: center;
+        padding-top: 30px; /* ריפוד עליון */
+        padding-bottom: 30px; /* ריפוד תחתון */
+    }
+
+    .top-logo-section img {
+        max-width: 120px; /* גודל הלוגו בחלק העליון */
+        height: auto;
+    }
+
     /* --- סקשן עליון של צור קשר --- */
     .contact-hero {
         background-color: #fdfdf5; /* צבע רקע שמנת */
         text-align: center;
-        padding-top: 60px;
+        padding-top: 30px; /* הקטנתי את הריפוד אחרי הלוגו */
         padding-bottom: 60px;
     }
 
@@ -84,6 +99,7 @@
         text-align: right;
         padding-right: 20px; /* רווח קטן מהקצה */
         padding-left: 20px;
+        max-width: 500px; /* הגבלת רוחב לעמודת הטקסט לטובת מראה יפה בדסקטופ */
     }
 
     .contact-details-column h2 {
@@ -133,9 +149,10 @@
         margin-bottom: 8px;
     }
 
-    /* עמודת התמונה */
+    /* עמודת התמונה + כיתוב */
     .contact-image-column {
         order: -1; /* התמונה תופיע מעל הפרטים במובייל */
+        position: relative; /* כדי למקם את הכיתוב */
     }
     .contact-image-container {
         max-width: 500px; /* רוחב מקסימלי לתמונה */
@@ -148,6 +165,57 @@
         width: 100%;
         height: auto;
         display: block;
+    }
+
+    /* כיתוב על התמונה - דומה ל-experience-label */
+    .image-overlay-text {
+        position: absolute;
+        bottom: 20px; /* מיקום הכיתוב בתחתית */
+        right: 20px; /* מיקום הכיתוב מימין */
+        background-color: #4B0082; /* רקע סגול */
+        color: white; /* טקסט לבן */
+        font-size: 1.2em; /* גודל טקסט גדול יותר */
+        padding: 15px 25px; /* ריפוד גדול יותר */
+        border-radius: 15px; /* פינות מעוגלות */
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); /* צל */
+        font-weight: bold;
+        white-space: nowrap;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transform: translateX(-50%); /* כדי למרכז אם נצטרך */
+        right: 50%; /* להזיז למרכז */
+        transform: translateX(50%); /* ולתקן חזרה למרכז */
+        /* שינוי כדי שיהיה מימין כמו שביקשת */
+        left: unset; /* לבטל את left אם היה */
+        right: 20px; /* להצמיד לימין */
+        transform: none; /* לבטל טרנספורמציה אם קיימת */
+    }
+
+    /* כפתור חזרה לדף הראשי */
+    .back-to-home-button {
+      display: inline-block;
+      background-color: #7B68EE; /* סגול בהיר */
+      color: white;
+      padding: 15px 30px;
+      border: none;
+      border-radius: 25px; /* פינות מעוגלות */
+      font-size: 1.2em;
+      font-weight: bold;
+      cursor: pointer;
+      text-decoration: none; /* הסרת קו תחתון */
+      transition: background-color 0.3s ease;
+      margin-top: 60px; /* רווח מהחלק שלמעלה */
+      margin-bottom: 40px; /* רווח מהחלק שלמטה */
+      text-align: center; /* יישור עצמי למרכז */
+    }
+
+    .back-to-home-button:hover {
+      background-color: #4B0082; /* סגול כהה בהובר */
+    }
+    .back-to-home-button:focus { /* פוקוס נגישות */
+      outline: 2px solid #4B0082;
+      outline-offset: 3px;
     }
 
     /* פוקוס נגישות (כפי שמופיע בקובץ הראשי) */
@@ -164,15 +232,21 @@
         .contact-content-section {
             flex-direction: row; /* עמודות בצדדים בדסקטופ */
             align-items: flex-start; /* יישור לחלק העליון */
+            justify-content: center; /* מרכוז העמודות עצמן */
         }
         .contact-image-column {
             order: 0; /* התמונה חוזרת לסדר הרגיל (שמאל) */
-            justify-content: flex-start; /* יישור תמונה לשמאל בתוך העמודה */
+            justify-content: flex-end; /* יישור תמונה לימין בתוך העמודה שלה (כדי לאפשר כיתוב על התמונה מימין) */
         }
         .contact-details-column {
             text-align: right;
             align-items: flex-start; /* מיישר את תוכני העמודה לימין */
             padding-left: 40px; /* מרווח גדול יותר בצד שמאל של הטקסט */
+            padding-right: 0; /* ביטול ריפוד בצד ימין */
+        }
+        .image-overlay-text {
+            right: 20px; /* מיקום הכיתוב על התמונה */
+            left: unset; /* לוודא שלא יוגדר left */
         }
     }
 
@@ -218,6 +292,18 @@
           justify-content: center; /* מרכוז פריטי קשר במובייל */
           flex-wrap: wrap; /* כדי שאם ארוך, יירד שורה */
       }
+      .image-overlay-text { /* הכיתוב על התמונה במובייל */
+          font-size: 1em;
+          padding: 10px 15px;
+          bottom: 15px;
+          right: 50%; /* מרכז את הכיתוב */
+          transform: translateX(50%); /* מרכוז את הכיתוב */
+      }
+      .back-to-home-button {
+          max-width: 100%; /* רוחב מלא במובייל */
+          padding: 12px 25px;
+          font-size: 1.1em;
+      }
     }
   </style>
 
@@ -225,21 +311,26 @@
 </head>
 <body>
 
+  <div class="section-container top-logo-section">
+    <img src="Esti-perple-logo.png" alt="לוגו אסתי - מצלמה סגולה עם שם">
+  </div>
+
   <div class="section-container contact-hero">
     <h1>צור קשר</h1>
-    <p>נשמח לענות על כל שאלה ולספק מידע נוסף על הסדנאות שלנו</p>
+    <p>אשמח לענות על כל שאלה ולספק מידע נוסף על הסדנאות שלי.</p>
   </div>
 
   <div class="section-container contact-content-section">
     <div class="contact-image-column">
       <div class="contact-image-container">
         <img src="SALI-089.JPG" alt="תמונה של אסתי להט מביטה במצלמה ומתייעצת עם טלפון">
+        <div class="image-overlay-text">טריקים לצילום בנייד</div>
       </div>
     </div>
 
     <div class="contact-details-column">
       <h2>בואו נדבר</h2>
-      <p>מעוניינים להירשם לסדנה או לקבל פרטים נוספים? מוזמנים ליצור איתי קשר באחת מהדרכים הבאות:</p>
+      <p>מעוניינים להירשם לסדנה או לקבל פרטים נוספים? אשמח שתצרו איתי קשר באחת מהדרכים הבאות:</p>
 
       <div class="contact-item">
         <i class="fas fa-phone"></i>
@@ -269,6 +360,10 @@
         <li>שבת: סגור</li>
       </ul>
     </div>
+  </div>
+
+  <div style="text-align: center;">
+    <a href="index.html" class="back-to-home-button">חזרה לדף הראשי</a>
   </div>
 
 </body>
