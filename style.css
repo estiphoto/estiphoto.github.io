@@ -12,7 +12,7 @@ body {
   color: #333;
 }
 
-h1, h2 {
+h1, h2, h3 {
   color: #4B0082;
   margin-top: 0;
 }
@@ -27,6 +27,11 @@ h2 {
   margin-bottom: 15px;
 }
 
+h3 {
+  font-size: 1.3em;
+  margin-bottom: 10px;
+}
+
 p, li {
   color: #555;
 }
@@ -37,7 +42,53 @@ ul {
 }
 
 /* =====================================
-   2. קונטיינרים כלליים
+   2. ניווט עליון
+   ===================================== */
+
+.main-navigation {
+  background-color: #4B0082;
+  padding: 15px 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+.nav-link {
+  color: white;
+  text-decoration: none;
+  font-size: 1.1em;
+  font-weight: bold;
+  padding: 10px 20px;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  background-color: rgba(255,255,255,0.2);
+  color: #fff;
+}
+
+.nav-link:focus {
+  outline: 2px solid white;
+  outline-offset: 2px;
+}
+
+/* =====================================
+   3. קונטיינרים כלליים
    ===================================== */
 
 .section-container {
@@ -48,7 +99,7 @@ ul {
 }
 
 /* =====================================
-   3. חלק עליון (Header Section)
+   4. חלק עליון (Header Section)
    ===================================== */
 
 .header-section {
@@ -80,7 +131,7 @@ ul {
 }
 
 /* =====================================
-   4. חלק אמצעי (About Section)
+   5. חלק אמצעי (About Section)
    ===================================== */
 
 .about-section {
@@ -122,7 +173,7 @@ ul {
 }
 
 /* =====================================
-   5. תווית ניסיון
+   6. תווית ניסיון
    ===================================== */
 
 .experience-label {
@@ -143,7 +194,7 @@ ul {
 }
 
 /* =====================================
-   6. ריבועי נתונים
+   7. ריבועי נתונים
    ===================================== */
 
 .stats-container {
@@ -183,7 +234,7 @@ ul {
 }
 
 /* =====================================
-   7. חלק תחתון (Footer Section)
+   8. חלק תחתון (Footer Section)
    ===================================== */
 
 .footer-section {
@@ -193,7 +244,7 @@ ul {
 }
 
 /* =====================================
-   8. קטע יצירת קשר
+   9. קטע יצירת קשר
    ===================================== */
 
 .contact {
