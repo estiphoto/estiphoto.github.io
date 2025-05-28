@@ -1,0 +1,303 @@
+
+  <style>
+    /* CSS ספציפי לעמוד צור קשר. אם מעבירה הכל ל-style.css, אפשר למחוק את ה-style הזה. */
+
+    /* הגדרות בסיסיות לכל הדף - כפי שהיו בקובץ הראשי */
+    body {
+      font-family: Arial, sans-serif;
+      direction: rtl; /* כיווניות מימין לשמאל */
+      text-align: right; /* יישור טקסט לימין */
+      margin: 0; /* מחיקת מרווחים חיצוניים של הדפדפן */
+      background-color: #f9f9f9; /* צבע רקע כללי מחוץ לחלקים */
+      line-height: 1.6;
+      color: #333;
+    }
+
+    h1, h2, h3 { /* הוספתי h3 לרשימה */
+      color: #4B0082; /* סגול כהה */
+      margin-top: 0; /* מחיקת מרווח עליון כברירת מחדל */
+    }
+
+    h1 {
+      font-size: 2.2em;
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      font-size: 1.8em;
+      margin-bottom: 15px;
+    }
+
+    p {
+      color: #555;
+    }
+
+    /* הגדרות כלליות לקונטיינרים של החלקים */
+    .section-container {
+      max-width: 1200px; /* רוחב מקסימלי לתוכן בכל חלק */
+      margin: 0 auto; /* מרכוז החלקים בדף */
+      padding: 40px 20px; /* ריפוד פנימי לכל חלק */
+      box-sizing: border-box; /* לוודא שהריפוד לא מגדיל את הרוחב מעבר ל-max-width */
+    }
+
+    /* --- סקשן לוגו עליון --- */
+    .top-logo-section {
+        background-color: #fdfdf5; /* צבע רקע שמנת כמו ה-header-section */
+        text-align: center;
+        padding-top: 30px; /* ריפוד עליון */
+        padding-bottom: 30px; /* ריפוד תחתון */
+    }
+
+    .top-logo-section img {
+        max-width: 120px; /* גודל הלוגו בחלק העליון */
+        height: auto;
+    }
+
+    /* --- סקשן עליון של צור קשר --- */
+    .contact-hero {
+        background-color: #fdfdf5; /* צבע רקע שמנת */
+        text-align: center;
+        padding-top: 30px; /* הקטנתי את הריפוד אחרי הלוגו */
+        padding-bottom: 60px;
+    }
+
+    .contact-hero p {
+        font-size: 1.2em;
+        max-width: 700px;
+        margin: 15px auto 0 auto;
+    }
+
+    /* --- סקשן תוכן ראשי (תמונה ופרטים) --- */
+    .contact-content-section {
+        background-color: #ffffff; /* צבע רקע לבן */
+        display: flex;
+        flex-direction: column; /* עמודות אחת מתחת לשנייה במובייל */
+        gap: 50px; /* רווח בין שני החלקים */
+        padding-top: 60px;
+        padding-bottom: 60px;
+        align-items: center; /* מרכוז במובייל */
+    }
+
+    .contact-image-column, .contact-details-column {
+        flex: 1; /* יתפוס מקום שווה בדסקטופ */
+        width: 100%; /* רוחב מלא במובייל */
+        display: flex; /* לשימוש ב-align-items/justify-content */
+        justify-content: center; /* מרכוז תוכן בתוך העמודה */
+        align-items: flex-start; /* יישור למעלה */
+    }
+
+    /* עמודת הפרטים */
+    .contact-details-column {
+        flex-direction: column; /* הפריטים בטור */
+        text-align: right;
+        padding-right: 20px; /* רווח קטן מהקצה */
+        padding-left: 20px;
+        max-width: 500px; /* הגבלת רוחב לעמודת הטקסט לטובת מראה יפה בדסקטופ */
+    }
+
+    .contact-details-column h2 {
+        text-align: right; /* יישור הכותרת לימין */
+        margin-bottom: 25px;
+        margin-right: 0; /* לוודא שאין מרווח בטעות מה-h2 */
+    }
+
+    .contact-item {
+        display: flex;
+        align-items: center; /* יישור אייקון וטקסט לאותו קו */
+        gap: 15px; /* רווח בין אייקון לטקסט */
+        margin-bottom: 18px; /* רווח בין פריטי קשר */
+        font-size: 1.15em;
+        color: #333;
+    }
+
+    .contact-item i {
+        color: #4B0082; /* סגול לאייקונים */
+        font-size: 1.8em; /* גודל אייקונים */
+    }
+
+    .contact-item a {
+      text-decoration: none;
+      color: #333;
+      transition: color 0.3s ease;
+    }
+    .contact-item a:hover {
+      color: #4B0082;
+    }
+
+    .contact-details-column h3 { /* לכותרת שעות פעילות */
+        font-size: 1.3em;
+        color: #4B0082;
+        margin-top: 40px;
+        margin-bottom: 15px;
+    }
+
+    .hours-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        font-size: 1.05em;
+        color: #555;
+    }
+    .hours-list li {
+        margin-bottom: 8px;
+    }
+
+    /* עמודת התמונה + כיתוב */
+    .contact-image-column {
+        order: -1; /* התמונה תופיע מעל הפרטים במובייל */
+        position: relative; /* כדי למקם את הכיתוב */
+    }
+    .contact-image-container {
+        max-width: 500px; /* רוחב מקסימלי לתמונה */
+        width: 100%;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1); /* צל עדין */
+    }
+    .contact-image-container img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    /* כיתוב על התמונה - דומה ל-experience-label */
+    .image-overlay-text {
+        position: absolute;
+        bottom: 20px; /* מיקום הכיתוב בתחתית */
+        right: 20px; /* מיקום הכיתוב מימין */
+        background-color: #4B0082; /* רקע סגול */
+        color: white; /* טקסט לבן */
+        font-size: 1.2em; /* גודל טקסט גדול יותר */
+        padding: 15px 25px; /* ריפוד גדול יותר */
+        border-radius: 15px; /* פינות מעוגלות */
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); /* צל */
+        font-weight: bold;
+        white-space: nowrap;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transform: translateX(-50%); /* כדי למרכז אם נצטרך */
+        right: 50%; /* להזיז למרכז */
+        transform: translateX(50%); /* ולתקן חזרה למרכז */
+        /* שינוי כדי שיהיה מימין כמו שביקשת */
+        left: unset; /* לבטל את left אם היה */
+        right: 20px; /* להצמיד לימין */
+        transform: none; /* לבטל טרנספורמציה אם קיימת */
+    }
+
+    /* כפתור חזרה לדף הראשי */
+    .back-to-home-button {
+      display: inline-block;
+      background-color: #7B68EE; /* סגול בהיר */
+      color: white;
+      padding: 15px 30px;
+      border: none;
+      border-radius: 25px; /* פינות מעוגלות */
+      font-size: 1.2em;
+      font-weight: bold;
+      cursor: pointer;
+      text-decoration: none; /* הסרת קו תחתון */
+      transition: background-color 0.3s ease;
+      margin-top: 60px; /* רווח מהחלק שלמעלה */
+      margin-bottom: 40px; /* רווח מהחלק שלמטה */
+      text-align: center; /* יישור עצמי למרכז */
+    }
+
+    .back-to-home-button:hover {
+      background-color: #4B0082; /* סגול כהה בהובר */
+    }
+    .back-to-home-button:focus { /* פוקוס נגישות */
+      outline: 2px solid #4B0082;
+      outline-offset: 3px;
+    }
+
+    /* פוקוס נגישות (כפי שמופיע בקובץ הראשי) */
+    a:focus,
+    button:focus,
+    input:focus,
+    textarea:focus {
+      outline: 2px solid #4B0082; /* מסגרת סגולה ברורה בפוקוס */
+      outline-offset: 2px; /* רווח קטן מהאלמנט */
+    }
+
+    /* --- מדיה קוואריז להתאמה לדסקטופ (מעל 768px) --- */
+    @media (min-width: 768px) {
+        .contact-content-section {
+            flex-direction: row; /* עמודות בצדדים בדסקטופ */
+            align-items: flex-start; /* יישור לחלק העליון */
+            justify-content: center; /* מרכוז העמודות עצמן */
+        }
+        .contact-image-column {
+            order: 0; /* התמונה חוזרת לסדר הרגיל (שמאל) */
+            justify-content: flex-end; /* יישור תמונה לימין בתוך העמודה שלה (כדי לאפשר כיתוב על התמונה מימין) */
+        }
+        .contact-details-column {
+            text-align: right;
+            align-items: flex-start; /* מיישר את תוכני העמודה לימין */
+            padding-left: 40px; /* מרווח גדול יותר בצד שמאל של הטקסט */
+            padding-right: 0; /* ביטול ריפוד בצד ימין */
+        }
+        .image-overlay-text {
+            right: 20px; /* מיקום הכיתוב על התמונה */
+            left: unset; /* לוודא שלא יוגדר left */
+        }
+    }
+
+    /* --- מדיה קוואריז להתאמה למובייל (עד 767px) --- */
+    @media (max-width: 767px) {
+      .section-container {
+        padding: 30px 15px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+      h2 {
+        font-size: 1.5em;
+      }
+      .contact-hero p {
+        font-size: 1em;
+      }
+      .contact-item {
+        font-size: 1em;
+        margin-bottom: 15px;
+      }
+      .contact-item i {
+        font-size: 1.5em;
+      }
+      .contact-details-column h3 {
+        font-size: 1.2em;
+        margin-top: 30px;
+      }
+      .hours-list {
+        font-size: 0.95em;
+      }
+      /* מרכוז עמודות במובייל אם הן עמודה אחת */
+      .contact-image-column, .contact-details-column {
+          justify-content: center; /* מרכוז אופקי */
+          align-items: center; /* מרכוז אנכי (לכותרות, אייקונים) */
+          text-align: center; /* יישור טקסט למרכז */
+          padding: 0 15px; /* ריפוד קטן יותר במובייל */
+      }
+      .contact-details-column h2, .contact-details-column h3 {
+          text-align: center; /* מרכוז כותרות במובייל */
+      }
+      .contact-item {
+          justify-content: center; /* מרכוז פריטי קשר במובייל */
+          flex-wrap: wrap; /* כדי שאם ארוך, יירד שורה */
+      }
+      .image-overlay-text { /* הכיתוב על התמונה במובייל */
+          font-size: 1em;
+          padding: 10px 15px;
+          bottom: 15px;
+          right: 50%; /* מרכז את הכיתוב */
+          transform: translateX(50%); /* מרכוז את הכיתוב */
+      }
+      .back-to-home-button {
+          max-width: 100%; /* רוחב מלא במובייל */
+          padding: 12px 25px;
+          font-size: 1.1em;
+      }
+    }
+  </style>
+
+  
