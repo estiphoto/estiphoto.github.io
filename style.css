@@ -1,53 +1,164 @@
 /* =====================================
-   12. עמוד צור קשר
+   1. הגדרות בסיסיות כלליות
    ===================================== */
 
-/* אזור הכותרת החדש המשלב לוגו וטקסט */
-.contact-hero-section {
-  background-color: #fdfdf5; /* צבע רקע זהה לכותרת בעמוד הבית */
-  padding-top: 40px;
-  padding-bottom: 40px;
-}
-
-.contact-hero-content {
-  display: flex; /* שימוש בפלקס ליישור התוכן בשורה */
-  align-items: center; /* יישור אנכי למרכז */
-  justify-content: center; /* יישור אופקי למרכז */
-  gap: 25px; /* רווח בין הלוגו לטקסט */
-  flex-wrap: wrap; /* מאפשר לתוכן לרדת שורה במסכים קטנים */
-}
-
-.contact-hero-logo {
-  max-width: 90px; /* גודל הלוגו */
-  height: auto;
-}
-
-.contact-hero-text h1 {
-  margin-bottom: 5px; /* הקטנת הרווח מתחת לכותרת הראשית */
-}
-
-.contact-hero-text p {
-  font-size: 1.1em;
+body {
+  font-family: Arial, sans-serif;
+  direction: rtl;
+  text-align: right;
   margin: 0;
+  background-color: #f9f9f9;
+  line-height: 1.6;
+  color: #333;
+}
+
+h1, h2, h3 {
+  color: #4B0082;
+  margin-top: 0;
+}
+
+h1 {
+  font-size: 2.2em;
+  margin-bottom: 10px;
+}
+
+h2 {
+  font-size: 1.8em;
+  margin-bottom: 15px;
+}
+
+h3 {
+  font-size: 1.3em;
+  margin-bottom: 10px;
+}
+
+p, li {
   color: #555;
 }
 
-
-/* עיצוב התוכן המרכזי (תמונה ופרטי קשר) */
-.contact-content-section {
-  display: flex; /* שימוש בפלקס ליישור העמודות */
-  align-items: flex-start; /* יישור להתחלה למעלה */
-  gap: 40px; /* רווח בין התמונה לפרטים */
-  flex-wrap: wrap; /* מעבר לשורה במובייל */
+ul {
+  padding-right: 20px;
+  margin-bottom: 20px;
 }
 
-.contact-image-column, .contact-details-column {
-  flex: 1; /* כל עמודה תקבל חצי מהרוחב הזמין */
-  min-width: 300px; /* רוחב מינימלי לפני שבירה */
+/* =====================================
+   2. ניווט עליון
+   ===================================== */
+
+.main-navigation {
+  background-color: #4B0082;
+  padding: 15px 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
-.contact-image-container {
-  max-width: 500px; /* הגבלת הרוחב המקסימלי של התמונה */
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+.nav-link {
+  color: white;
+  text-decoration: none;
+  font-size: 1.1em;
+  font-weight: bold;
+  padding: 10px 20px;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  background-color: rgba(255,255,255,0.2);
+  color: #fff;
+}
+
+.nav-link:focus {
+  outline: 2px solid white;
+  outline-offset: 2px;
+}
+
+/* =====================================
+   3. קונטיינרים כלליים
+   ===================================== */
+
+.section-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  box-sizing: border-box;
+}
+
+/* =====================================
+   4. חלק עליון (Header Section)
+   ===================================== */
+
+.header-section {
+  background-color: #fdfdf5;
+  text-align: center;
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+.header-logo-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.logo-small {
+  max-width: 100px;
+  height: auto;
+}
+
+.opening-text {
+  font-size: 1.2em;
+  line-height: 1.8;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* =====================================
+   5. חלק אמצעי (About Section)
+   ===================================== */
+
+.about-section {
+  background-color: #fffada;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+.about-image-column, .about-text-column {
+  flex: 1;
+  width: 100%;
+}
+
+.about-image-column {
+  order: -1;
+  display: flex;
+  justify-content: center;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.about-image-container {
+  max-width: 500px;
   width: 100%;
   position: relative;
   border-radius: 20px;
@@ -55,20 +166,232 @@
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
 }
 
-.contact-image-container img {
+.about-image-container img {
   width: 100%;
   height: auto;
   display: block;
 }
 
-/* התאמות למובייל - כדי שהעיצוב החדש ייראה טוב גם בנייד */
-@media (max-width: 768px) {
-  .contact-hero-content {
-    flex-direction: column; /* הצגת הלוגו והטקסט אחד מתחת לשני */
-    text-align: center;
+/* =====================================
+   6. תווית ניסיון
+   ===================================== */
+
+.experience-label {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  background-color: #4B0082;
+  color: white;
+  font-size: 1.2em;
+  padding: 15px 25px;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  font-weight: bold;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* =====================================
+   7. ריבועי נתונים
+   ===================================== */
+
+.stats-container {
+  display: flex;
+  justify-content: flex-start;
+  gap: 20px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+}
+
+.stat-box {
+  background-color: #f0e6fa;
+  color: #4B0082;
+  padding: 15px 25px;
+  border-radius: 15px;
+  text-align: center;
+  flex: 0 0 auto;
+  min-width: 130px;
+  max-width: 180px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.stat-number {
+  font-size: 2.2em;
+  margin-bottom: 5px;
+}
+
+.stat-description {
+  font-size: 0.9em;
+  color: #666;
+}
+
+/* =====================================
+   8. חלק תחתון (Footer Section)
+   ===================================== */
+
+.footer-section {
+  background-color: #ffffff;
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+/* =====================================
+   9. קטע יצירת קשר
+   ===================================== */
+
+.contact {
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 1px solid #eee;
+}
+
+.contact h2 {
+  margin-top: 0;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 12px 0;
+  font-size: 1.1em;
+  color: #333;
+  flex-wrap: wrap;
+}
+
+.contact-item a {
+  text-decoration: none;
+  color: #333;
+  transition: color 0.3s ease;
+}
+
+.contact-item a:hover {
+  color: #4B0082;
+}
+
+.contact-item i {
+  color: #4B0082;
+  font-size: 1.5em;
+}
+
+/* =====================================
+   9. כפתור נגישות
+   ===================================== */
+
+.accessibility-section {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.accessibility-button {
+  display: inline-block;
+  background-color: #4B0082;
+  color: white;
+  padding: 12px 25px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.accessibility-button:hover {
+  background-color: #6a2a9e;
+}
+
+.accessibility-button:focus {
+  outline: 2px solid #4B0082;
+  outline-offset: 3px;
+}
+
+/* =====================================
+   10. מדיה קוואריז - דסקטופ (מעל 768px)
+   ===================================== */
+
+@media (min-width: 768px) {
+  .header-logo-title {
+    flex-direction: row;
   }
 
-  .contact-content-section {
-    flex-direction: column; /* הצגת התמונה ופרטי הקשר אחד מתחת לשני */
+  .about-section {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .about-image-column {
+    order: 0;
+    padding-left: 40px;
+  }
+
+  .about-text-column {
+    padding-right: 40px;
+  }
+}
+
+/* =====================================
+   11. מדיא קוואריז - מובייל (עד 600px)
+   ===================================== */
+
+@media (max-width: 600px) {
+  .section-container {
+    padding: 30px 15px;
+  }
+
+  h1 {
+    font-size: 1.8em;
+  }
+
+  h2 {
+    font-size: 1.5em;
+  }
+
+  .opening-text {
+    font-size: 1em;
+  }
+
+  .logo-small {
+    max-width: 80px;
+  }
+
+  .about-image-column {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .experience-label {
+    font-size: 1em;
+    padding: 10px 20px;
+    bottom: 10px;
+    left: 10px;
+  }
+
+  .stats-container {
+    justify-content: center;
+    gap: 15px;
+  }
+
+  .stat-box {
+    flex: 1 1 45%;
+    padding: 15px 20px;
+    font-size: 0.9em;
+  }
+
+  .stat-number {
+    font-size: 1.8em;
+  }
+
+  .contact-item {
+    font-size: 1em;
+  }
+
+  .contact-item i {
+    font-size: 1.3em;
   }
 }
