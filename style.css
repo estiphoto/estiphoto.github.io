@@ -645,3 +645,345 @@ ul {
     grid-template-columns: repeat(2, 1fr);
   }
 }
+
+/* =====================================
+   18. עיצוב דף סדנאות
+   ===================================== */
+
+/* סדנאות - מבנה כללי */
+.workshop-section {
+  background-color: #ffffff;
+  margin-bottom: 0;
+}
+
+.workshop-section.alt-layout {
+  background-color: #fffada;
+}
+
+.workshop-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 40px;
+  padding: 20px 0;
+}
+
+.workshop-content.right-images {
+  flex-direction: row;
+}
+
+.workshop-content.left-images {
+  flex-direction: row-reverse;
+}
+
+/* טקסט הסדנה */
+.workshop-text {
+  flex: 1.2;
+  padding: 20px;
+}
+
+.workshop-text h2 {
+  color: #4B0082;
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+.workshop-text h3 {
+  color: #4B0082;
+  font-size: 1.4em;
+  margin-top: 25px;
+  margin-bottom: 15px;
+}
+
+.workshop-text p {
+  font-size: 1.1em;
+  line-height: 1.7;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.workshop-text ul {
+  list-style: none;
+  padding-right: 0;
+}
+
+.workshop-text li {
+  padding: 8px 0;
+  color: #666;
+  border-bottom: 1px solid #f0f0f0;
+  font-size: 1em;
+  line-height: 1.6;
+}
+
+.workshop-text li:last-child {
+  border-bottom: none;
+}
+
+/* פרטי הסדנה */
+.workshop-details {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 2px solid #f0e6fa;
+}
+
+.detail-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #f9f9f9;
+  padding: 10px 15px;
+  border-radius: 20px;
+  font-weight: bold;
+  color: #4B0082;
+}
+
+.detail-item i {
+  color: #4B0082;
+  font-size: 1.1em;
+}
+
+/* תמונות הסדנאות */
+.workshop-images {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+.images-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 15px;
+  max-width: 400px;
+  width: 100%;
+}
+
+.images-grid .workshop-img:first-child {
+  grid-column: 1 / -1;
+  grid-row: 1;
+}
+
+.workshop-img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.workshop-img:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.images-grid .workshop-img:first-child {
+  height: 200px;
+}
+
+/* סדנאות זום */
+.zoom-section {
+  background-color: #f0e6fa;
+  text-align: center;
+}
+
+.zoom-header h2 {
+  color: #4B0082;
+  font-size: 2.2em;
+  margin-bottom: 15px;
+}
+
+.zoom-header p {
+  font-size: 1.2em;
+  color: #666;
+  margin-bottom: 40px;
+}
+
+.zoom-options {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.zoom-card {
+  background-color: white;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  text-align: center;
+}
+
+.zoom-card:hover {
+  transform: translateY(-8px);
+}
+
+.zoom-icon {
+  background-color: #4B0082;
+  color: white;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+  font-size: 2em;
+}
+
+.zoom-card h3 {
+  color: #4B0082;
+  font-size: 1.5em;
+  margin-bottom: 15px;
+}
+
+.zoom-card p {
+  color: #666;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.zoom-card ul {
+  list-style: none;
+  padding-right: 0;
+  text-align: right;
+}
+
+.zoom-card li {
+  padding: 5px 0;
+  color: #555;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.zoom-card li:last-child {
+  border-bottom: none;
+}
+
+/* קריאה לפעולה */
+.cta-section {
+  text-align: center;
+  padding: 40px 0;
+  border-bottom: 1px solid #eee;
+  margin-bottom: 30px;
+}
+
+.cta-section h2 {
+  color: #4B0082;
+  font-size: 2.2em;
+  margin-bottom: 15px;
+}
+
+.cta-section p {
+  font-size: 1.2em;
+  color: #666;
+  margin-bottom: 30px;
+}
+
+.nav-button.secondary {
+  background-color: transparent;
+  color: #4B0082;
+  border: 2px solid #4B0082;
+}
+
+.nav-button.secondary:hover {
+  background-color: #4B0082;
+  color: white;
+}
+
+/* =====================================
+   19. מדיא קוואריז לדף סדנאות
+   ===================================== */
+
+/* טאבלט - עד 768px */
+@media (max-width: 768px) {
+  .workshop-content,
+  .workshop-content.right-images,
+  .workshop-content.left-images {
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .workshop-text,
+  .workshop-images {
+    padding: 10px;
+  }
+  
+  .workshop-details {
+    justify-content: center;
+  }
+  
+  .images-grid {
+    max-width: 300px;
+  }
+  
+  .zoom-options {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* מובייל - עד 600px */
+@media (max-width: 600px) {
+  .workshop-text h2 {
+    font-size: 1.6em;
+  }
+  
+  .workshop-text h3 {
+    font-size: 1.2em;
+  }
+  
+  .workshop-text p {
+    font-size: 1em;
+  }
+  
+  .images-grid {
+    grid-template-columns: 1fr;
+    max-width: 250px;
+  }
+  
+  .images-grid .workshop-img:first-child {
+    grid-column: 1;
+    height: 180px;
+  }
+  
+  .workshop-img {
+    height: 120px;
+  }
+  
+  .detail-item {
+    font-size: 0.9em;
+    padding: 8px 12px;
+  }
+  
+  .zoom-header h2 {
+    font-size: 1.8em;
+  }
+  
+  .zoom-header p {
+    font-size: 1em;
+  }
+  
+  .zoom-icon {
+    width: 60px;
+    height: 60px;
+    font-size: 1.5em;
+  }
+  
+  .zoom-card {
+    padding: 20px;
+  }
+  
+  .navigation-buttons {
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .nav-button {
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+}
