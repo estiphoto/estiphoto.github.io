@@ -744,7 +744,7 @@ ul {
   font-size: 1.1em;
 }
 
-/* תמונות הסדנאות */
+/* תמונות הסדנאות - תיקון לתמונה יחידה */
 .workshop-images {
   flex: 1;
   display: flex;
@@ -752,36 +752,19 @@ ul {
   padding: 20px;
 }
 
-.images-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
-  gap: 15px;
+.workshop-single-image {
   max-width: 400px;
   width: 100%;
-}
-
-.images-grid .workshop-img:first-child {
-  grid-column: 1 / -1;
-  grid-row: 1;
-}
-
-.workshop-img {
-  width: 100%;
-  height: 280px;
+  height: 300px;
   object-fit: cover;
   border-radius: 15px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.workshop-img:hover {
+.workshop-single-image:hover {
   transform: translateY(-5px);
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-}
-
-.images-grid .workshop-img:first-child {
-  height: 200px;
 }
 
 /* סדנאות זום */
@@ -894,8 +877,6 @@ ul {
   color: white;
 }
 
-
-
 /* =====================================
    19. מדיא קוואריז לדף סדנאות
    ===================================== */
@@ -918,8 +899,9 @@ ul {
     justify-content: center;
   }
   
-  .images-grid {
-    max-width: 300px;
+  .workshop-single-image {
+    max-width: 100%;
+    height: 250px;
   }
   
   .zoom-options {
@@ -941,18 +923,8 @@ ul {
     font-size: 1em;
   }
   
-  .images-grid {
-    grid-template-columns: 1fr;
-    max-width: 250px;
-  }
-  
-  .images-grid .workshop-img:first-child {
-    grid-column: 1;
-    height: 180px;
-  }
-  
-  .workshop-img {
-    height: 120px;
+  .workshop-single-image {
+    height: 200px;
   }
   
   .detail-item {
