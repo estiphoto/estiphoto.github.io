@@ -1049,3 +1049,59 @@ ul {
     padding: 15px;
   }
 }
+
+
+
+/* =====================================
+   20. תפריט נפתח - סדנאות חו"ל
+   ===================================== */
+
+/* תפריט נפתח - סדנאות חו"ל */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: rgba(255,255,255,0.95);
+  min-width: 200px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  z-index: 1;
+  top: 100%;
+  right: 0; /* RTL */
+  border-radius: 10px;
+  padding: 10px 0;
+  direction: rtl;
+}
+
+.dropdown-content a {
+  color: #4B0082 !important;
+  padding: 12px 20px;
+  text-decoration: none;
+  display: block;
+  font-weight: normal !important;
+  transition: background 0.3s;
+}
+
+.dropdown-content a:hover {
+  background-color: rgba(75,0,130,0.1) !important;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown .nav-link {
+  padding-right: 30px; /* מקום לחץ */
+}
+
+.dropdown::after {
+  content: "▼";
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 12px;
+}
