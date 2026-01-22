@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+  <meta charset="UTF-8">
+  <title>סדנאות צילום קרנבל ונציה 2026 - אסתי להט</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://kit.fontawesome.com/645b2069e2.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+  <!-- ניווט עליון -->
+  <nav class="main-navigation">
+  <div class="nav-container">
+    <div class="nav-links">
+      <a href="index.html" class="nav-link">דף הבית</a>
+      <a href="workshops.html" class="nav-link">סדנאות</a>
+      
+      <!-- תפריט נפתח -->
+      <div class="dropdown">
+        <a href="international.html" class="nav-link">סדנאות חו"ל</a>
+        <div class="dropdown-content">
+          <a href="venice.html">ונציה 2026</a> 
+          <a href="#">וייטנאם</a>
+          <a href="#">לרנקה 2026</a>
+        </div>
+      </div>
+      
+      <a href="recommend.html" class="nav-link">המלצות</a>
+	<a href="faq.html" class="nav-link active">שאלות ותשובות</a>
+      <a href="contact.html" class="nav-link">צור קשר</a>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div class="section-container header-section">
+  <div class="header-logo-title">
+    <img src="Esti-perple-logo.png" alt="לוגו אסתי להט" class="logo-small">
+    <h1>שאלות ותשובות על סדנאות צילום בנייד</h1>
+  </div>
+  <p class="opening-text">
+    כאן מרוכזות השאלות שאנשים שואלים אותי הכי הרבה לפני סדנת צילום בנייד או הרצאה.
+    המטרה היא שתדעו בדיוק למה לצפות ואיך להתאים את הסדנה או ההרצאה לקבוצה שלכם.
+  </p>
+  <div style="display:flex;justify-content:center;margin-top:20px;">
+    <img src="images/faq/Group.jpg"
+         alt="קבוצת משתתפים בסדנת צילום בנייד"
+         style="max-width:420px;height:260px;object-fit:cover;border-radius:16px;">
+  </div>
+</div>
+
+
+<div class="section-container workshop-section">
+  <div class="workshop-content right-images">
+    <div class="workshop-text">
+      <h2>סדנאות צילום בנייד – שאלות נפוצות</h2>
+
+      <h3>איך לצלם טוב בנייד ללא ניסיון קודם?</h3>
+      <p>
+        בסדנה לומדים איך להפיק תמונות מקצועיות מהנייד בלבד – קומפוזיציה, תאורה,
+        זוויות, טכניקות מיוחדות וטיפים לעריכה מהירה באפליקציות פשוטות.
+      </p>
+
+      <h3>מה לומדים בסדנת צילום בנייד?</h3>
+      <p>
+        נתרגל צילום נופים, אנשים, מוצרים ותנועה. נלמד לזהות אור טוב, לבנות פריים נכון,
+        להשתמש במצבי צילום חכמים ולערוך תמונות כך שיספרו סיפור ברור.
+      </p>
+
+      <h3>איזה נייד צריך לסדנת צילום?</h3>
+      <p>
+        כל סמארטפון עם מצלמה בסיסית מתאים – אייפון, אנדרואיד, חדש או ישן.
+        מה שמשנה הוא איך משתמשים בו, לא הדגם.
+      </p>
+
+      <h3>צריך חצובה או ציוד מיוחד?</h3>
+      <p>
+        לא חובה. חצובה קלה (גם ב‑20 ש״ח) עוזרת לסלפי וחשיפות ארוכות, אבל אפשר גם בלי.
+        בחלק מהסדנאות אני מביאה ציוד נוספת – פלייסמטים מיוחדים לצילום מוצרים לבעלי עסקים,
+        ציוד יצירה לילדים שמשתלב עם סדנת הצילום ועוד אביזרים שמעשירים את החוויה.
+      </p>
+    </div>
+
+    <div class="workshop-images">
+      <img src="images/faq/practical.JPG"
+           alt="תרגול מעשי בסדנת צילום בנייד"
+           class="workshop-single-image">
+    </div>
+  </div>
+</div>
+
+
+<div class="section-container workshop-section alt-layout">
+  <div class="workshop-content left-images">
+    <div class="workshop-images">
+      <img src="images/faq/Workshop.jpg"
+           alt="סדנת צילום לגיל השלישי באווירה נעימה"
+           class="workshop-single-image">
+    </div>
+
+    <div class="workshop-text">
+      <h2>סדנאות צילום לגיל השלישי</h2>
+
+      <h3>סדנאות צילום לגיל שלישי – איך זה עובד?</h3>
+      <p>
+        הסדנה מותאמת לגיל השלישי: קצב איטי, הסברים ברורים, תרגול מעשי בשלבים
+        ומקומות ישיבה זמינים. יש זמן לשאול, להדגים ולהתנסות בנחת.
+      </p>
+
+      <h3>צריך להיות טכנולוגיים לסדנת צילום?</h3>
+      <p>
+        ממש לא. מתחילים מהתפריטים הכי בסיסיים ומתקדמים לאט.
+        בכל שלב אני ניגשת אישית ועוזרת לכל משתתף בנייד שלו.
+      </p>
+
+      <h3>מה מביאים לסדנת צילום לגמלאים?</h3>
+      <p>
+        הנייד טעון, משקפיים אם צריך, והרבה סקרנות.
+        את כל שאר הציוד אני מביאה – דוגמאות לצילום, אביזרים קטנים ותכני תרגול.
+      </p>
+    </div>
+  </div>
+</div>
+
+
+<div class="section-container workshop-section">
+  <div class="workshop-content right-images">
+    <div class="workshop-text">
+      <h2>סדנאות צילום לארגונים וחברות</h2>
+
+      <h3>סדנת צילום לחברות – איך זה עוזר לעסק?</h3>
+      <p>
+        העובדים לומדים לצלם אחד את השני, את המוצרים ואת חללי העבודה בצורה מחמיאה.
+        התוצאה – יותר תוכן איכותי לרשתות, לדפי נחיתה ולתקשורת פנים‑ארגונית.
+      </p>
+
+      <h3>אפשר סדנת צילום במשרד עצמו?</h3>
+      <p>
+        כן. אני מגיעה למשרד, מנצלת את המרחבים האמיתיים של הארגון כסט צילומים,
+        ומתאימה את התרגול לערכים ולשפה של החברה.
+      </p>
+
+      <h3>מה משך סדנה לארגון?</h3>
+      <p>
+        זה משתנה. יש סדנאות קצרות של 2–4 שעות, יש תהליכים של 4–6 מפגשים,
+        ויש סדנאות מעמיקות פעם בחודש שנפרסות לאורך שנה שלמה לפי הצורך.
+      </p>
+    </div>
+
+    <div class="workshop-images">
+      <img src="images/faq/Organizations.JPG"
+           alt="עובדים משתתפים בסדנת צילום לארגון"
+           class="workshop-single-image">
+    </div>
+  </div>
+</div>
+
+
+<div class="section-container workshop-section alt-layout">
+  <h2>סדנאות חו״ל – ונציה ווייטנאם</h2>
+
+  <h3>סדנת צילום בוונציה – מה בדיוק עושים?</h3>
+  <p>
+    סיורי צילום מעשיים בקרנבל ונציה בקבוצות קטנות.
+    מצלמים מסיכות, גשרים וגונדולות בשעות האור הכי יפות,
+    ומקבלים ליווי אישי בבחירת לוקיישנים וזוויות צילום.
+  </p>
+
+  <h3>הרצאת וייטנאם לצילום – למי היא מתאימה?</h3>
+  <p>
+    ההרצאה מיועדת לגיל השלישי, ארגוני עובדים, מרכזי תרבות ומדריכי טיולים.
+    דרך סיפור טיול מדרום לצפון בוייטנאם הקהל מקבל טיפים פרקטיים לצילום בנייד
+    – שווקים, נופים, תרבויות ולילה.
+  </p>
+</div>
+
+
+  <!-- יצירת קשר (לבן) -->
+  <div class="section-container footer-section">
+    <div class="cta-section">
+      <h2>מוכנים לצלם את הקרנבל?</h2>
+      <p>מקומות מוגבלים – תפסי מקום עכשיו!</p>
+      <div class="navigation-buttons">
+        <a href="contact.html" class="nav-button primary">צור קשר להרשמה</a>
+        <a href="index.html" class="nav-button secondary">חזור לדף הבית</a>
+      </div>
+    </div>
+
+    <div class="contact">
+      <h2>צור קשר</h2>
+      <div class="contact-item"><i class="fas fa-phone"></i> 052-720-1140</div>
+      <div class="contact-item"><i class="fas fa-envelope"></i> esti.lahat.photo@gmail.com</div>
+      <div class="contact-item">
+        <a href="https://www.instagram.com/esti.lahat.photo" target="_blank"><i class="fab fa-instagram"></i> @esti.lahat.photo</a>
+      </div>
+      <div class="contact-item">
+        <a href="https://www.facebook.com/esti.lahat.photo/" target="_blank"><i class="fab fa-facebook"></i> @esti.lahat.photo</a>
+      </div>
+      <div class="contact-item">
+        <a href="https://www.youtube.com/@esti_lahat_photo" target="_blank"><i class="fab fa-youtube"></i> יוטיוב</a>
+      </div>
+    </div>
+
+    <div class="accessibility-section">
+      <a href="accessibility.html" target="_blank" class="accessibility-button">הצהרת נגישות</a>
+    </div>
+  </div>
+
+</body>
+</html>
