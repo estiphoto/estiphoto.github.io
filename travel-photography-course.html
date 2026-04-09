@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>קורס צילום בנייד חווייתי למטיילים | אסתי להט</title>
+    <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&f[]=instrument-serif@400,700&display=swap" rel="stylesheet">
+    <style>
+        /* הסטיילים מהקובץ המצורף style_l-4.txt */
+        :root {
+            --color-primary: #4B0082;
+            --color-bg: #f9f9f9;
+            --color-surface: #fdfdf5;
+            --color-highlight: #fffada;
+            --color-text: #333;
+            --color-text-muted: #555;
+        }
+        
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { 
+            font-family: 'Satoshi', Arial, sans-serif; 
+            direction: rtl; 
+            text-align: right; 
+            line-height: 1.6; 
+            color: var(--color-text);
+            background-color: var(--color-bg);
+        }
+        
+        .header-section {
+            background-color: var(--color-surface);
+            text-align: center;
+            padding: 60px 20px;
+        }
+        
+        .header-title {
+            font-family: 'Instrument Serif', serif;
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            color: var(--color-primary);
+            margin-bottom: var(--space-4, 1rem);
+        }
+        
+        .header-subtitle {
+            font-size: 1.2em;
+            color: var(--color-text-muted);
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .section-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+            background-color: var(--color-highlight);
+        }
+        
+        .for-who-section, .what-you-learn-section, .bonuses-section {
+            background-color: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            margin-bottom: 40px;
+        }
+        
+        .table-container {
+            overflow-x: auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            margin: 30px 0;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 1rem;
+        }
+        
+        th, td {
+            padding: 15px 12px;
+            text-align: right;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        
+        th {
+            background-color: #f8f8ff;
+            color: var(--color-primary);
+            font-weight: 600;
+        }
+        
+        tr:nth-child(even) { background-color: #fafafa; }
+        tr:hover { background-color: #f0e6fa; }
+        
+        .testimonials-section {
+            background-color: var(--color-surface);
+            padding: 60px 20px;
+        }
+        
+        .testimonial {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+            border-right: 5px solid var(--color-primary);
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            font-size: 1.1em;
+            color: var(--color-text-muted);
+            margin-bottom: 20px;
+            line-height: 1.7;
+        }
+        
+        .testimonial-author {
+            font-weight: bold;
+            color: var(--color-primary);
+            font-size: 1.05em;
+        }
+        
+        .cta-buttons {
+            text-align: center;
+            padding: 60px 20px;
+            background: linear-gradient(135deg, var(--color-primary), #6a2a9e);
+            color: white;
+            margin: 60px 0;
+            border-radius: 25px;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            padding: 18px 40px;
+            background: rgba(255,255,255,0.2);
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 700;
+            font-size: 1.2em;
+            margin: 0 15px;
+            transition: all 0.3s ease;
+            border: 2px solid rgba(255,255,255,0.3);
+        }
+        
+        .cta-button:hover {
+            background: rgba(255,255,255,0.3);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(75,0,130,0.4);
+        }
+        
+        .price-section {
+            background: white;
+            padding: 50px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            margin: 60px 20px;
+        }
+        
+        .price-special {
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: var(--color-primary);
+            margin: 20px 0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .price-regular {
+            text-decoration: line-through;
+            color: var(--color-text-muted);
+            font-size: 1.3em;
+            margin-bottom: 20px;
+        }
+        
+        .about-section {
+            background: var(--color-surface);
+            padding: 80px 20px;
+            text-align: center;
+        }
+        
+        .about-text {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.25em;
+            line-height: 1.8;
+        }
+        
+        .footer {
+            background: #ffffff;
+            padding: 40px 20px;
+            text-align: center;
+            border-top: 1px solid #eee;
+            color: var(--color-text-muted);
+        }
+        
+        @media (max-width: 768px) {
+            .section-container { padding: 40px 15px; }
+            .cta-button { 
+                display: block; 
+                max-width: 280px; 
+                margin: 15px auto; 
+            }
+            .price-special { font-size: 2.8rem; }
+            table { font-size: 0.9rem; }
+            th, td { padding: 12px 8px; }
+        }
+    </style>
+</head>
+<body>
+    <!-- כותרת ראשית -->
+    <header class="header-section">
+        <h1 class="header-title">קורס צילום בנייד חווייתי למטיילים</h1>
+        <p class="header-subtitle">
+            לכל הרמות • דגש על טיולים • צילום ברגע • העלאה מיידית • יצירת אלבום בקלות
+        </p>
+    </header>
+
+    <main>
+        <!-- למי זה מתאים -->
+        <section class="section-container">
+            <div class="for-who-section">
+                <h2>למי זה מתאים</h2>
+                <p>לקורס מתאים כל מי שאוהב לצלם בטיולים, רוצה תמונות וסרטונים חדים ויפים מהנייד, ורוצה ללמוד איך לשתף אותם מיד עם המשפחה והחברים.</p>
+                
+                <h3>מתאים ל:</h3>
+                <ul>
+                    <li>מטיילים שרוצים לתעד טוב יותר</li>
+                    <li>הורים שמצלמים עם הילדים</li>
+                    <li>כל מי שרוצה תמונות וסרטונים איכותיים מהנייד</li>
+                </ul>
+                
+                <h3>לא מתאים ל:</h3>
+                <ul>
+                    <li>ילדים מתחת לגיל 12</li>
+                    <li>מי שמחפש צילום מקצועי עם ציוד יקר</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- מה לומדים - טבלה -->
+        <section class="section-container">
+            <div class="what-you-learn-section">
+                <h2>מה לומדים</h2>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>מפגש</th>
+                                <th>פורמט</th>
+                                <th>מתי</th>
+                                <th>מה קורה</th>
+                                <th>תוצר</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>זום</td>
+                                <td>28.4, 19:00–19:45</td>
+                                <td>יסודות צילום בנייד: עדשות, אור, קומפוזיציה, סטוריטלינג</td>
+                                <td>שפה משותפת וכלים לצילום נכון יותר</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>שטח</td>
+                                <td>1.5, שישי בוקר</td>
+                                <td>צילום בפועל של נוף, אנשים ורגעים; שמירה מהירה של התמונות הטובות; העלאה מיידית לסטורי באינסטגרם או בפייסבוק</td>
+                                <td>סדרת תמונות ראשונה + תרגול שיתוף מיידי</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>זום</td>
+                                <td>5.5, 19:00–19:45</td>
+                                <td>הורדת תמונות, קיטלוג נכון, עריכה בסיסית, וידאו מבוא, ואפשרויות עבודה גם באפליקציות שונות</td>
+                                <td>סדר עבודה ברור לניהול התמונות</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>שטח</td>
+                                <td>8.5, שישי בוקר</td>
+                                <td>צילום וידאו וסטוריז בזמן אמת; עבודה מהירה גם כשיש סביבנו בלגן; תיעוד רגעים חיים בשטח</td>
+                                <td>סרטון קצר/סטורי מוכן להפצה</td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>זום</td>
+                                <td>12.5, 19:00–19:45</td>
+                                <td>עבודה על אלבומים, בחירת תמונות, רצף סיפורי, משובים ולמידה איך לפרוץ את הקושי של יצירת אלבום בקלות</td>
+                                <td>מבנה לאלבום מסכם ודגשים לשיפור</td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td>שטח מסכם</td>
+                                <td>15.5, שישי אחרה"צ</td>
+                                <td>מפגש חווייתי עם בני משפחה/חברים; יישום מלא בשטח; אפשרות ליצירת אלבום בהמשך</td>
+                                <td>תמונות וסרטון מוכנים לשיתוף ולאלבום</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- מה מקבלים -->
+        <section class="section-container">
+            <div class="for-who-section">
+                <h2>מה מקבלים</h2>
+                <ul>
+                    <li>ליווי אישי לאורך הקורס</li>
+                    <li>קבוצת וואטסאפ פעילה לשאלות, שיתוף תמונות ותרגול</li>
+                    <li>משוב על תמונות ודוגמאות</li>
+                    <li>שימוש באפליקציות — החלק החינמי, עם אפשרות לשדרוג בתשלום אם רוצים</li>
+                    <li>כלים פשוטים שמתאימים לחיים ולטיולים</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- בונוסים -->
+        <section class="section-container">
+            <div class="bonuses-section">
+                <h2>בונוסים מיוחדים</h2>
+                <ul>
+                    <li><strong>קבוצת וואטסאפ פעילה</strong> — שווי בונוס 300 ₪</li>
+                    <li><strong>כלי AI פשוטים</strong> כחלק טבעי מהתהליך — שווי בונוס 180 ₪</li>
+                    <li><strong>המלצות על ציוד</strong> שמתאים לצילום בנייד — שווי בונוס 150 ₪</li>
+                    <li><strong>מפגש סיום חווייתי</strong> — אפשר להביא עד 2 חברים או בני משפחה — שווי בונוס 600 ₪</li>
+                    <li><strong>חוברת הסבר</strong> עם רשימת הנושאים, טיפים לצילום, ציוד והגדרות לנייד — שווי בונוס 130 ₪</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- המלצות -->
+        <section class="testimonials-section">
+            <div class="section-container">
+                <h2 style="text-align: center; margin-bottom: 50px; font-size: 2.5rem; color: var(--color-primary);">המלצות</h2>
+                <div class="testimonial">
+                    <p class="testimonial-text">"אסתי מלמדת בצורה פשוטה וברורה, בלי מילים מפחידות. למדתי לצלם תמונות חדות ונקיות, והיום אני שולח תמונות למשפחה בגאווה!"</p>
+                    <p class="testimonial-author">— דבורה לוי</p>
+                </div>
+                <div class="testimonial">
+                    <p class="testimonial-text">"הסדנה שינתה לי את הצילום בנייד לחלוטין. עכשיו אני יודע איך לראות תמונה לפני שאני לוחץ על הכפתור."</p>
+                    <p class="testimonial-author">— מיכל כהן</p>
+                </div>
+                <div class="testimonial">
+                    <p class="testimonial-text">"הרגשתי סוף סוף שיש לי דרך אמיתית לתעד טיולים בלי להסתבך. הכל היה ברור ונעים."</p>
+                    <p class="testimonial-author">— יוסי רוזן</p>
+                </div>
+                <div class="testimonial">
+                    <p class="testimonial-text">"אסתי הסבירה פשוט, והצלחתי כבר במפגש הראשון לצלם ולשתף מהר מהטיול."</p>
+                    <p class="testimonial-author">— תמר ברק</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- עלות -->
+        <section class="price-section section-container">
+            <h2 style="font-size: 2.8rem; color: var(--color-primary); margin-bottom: 30px;">עלות</h2>
+            <div class="price-regular">מחיר רגיל: 2,600 ₪ כולל כל המפגשים והבונוסים</div>
+            <div class="price-special">400 ₪</div>
+            <p style="font-size: 1.3em; margin-top: 30px; color: var(--color-text-muted);">מקומות מוגבלים ל־15 משתתפים בלבד</p>
+        </section>
+
+        <!-- שאלות ותשובות -->
+        <section class="section-container">
+            <div class="for-who-section">
+                <h2>שאלות ותשובות</h2>
+                <div style="display: grid; gap: 25px; max-width: 800px; margin: 0 auto;">
+                    <div><strong>כמה מפגשים?</strong><br>6 מפגשים: 3 זום + 3 שטח.</div>
+                    <div><strong>אורך מפגש?</strong><br>זום: 45 דקות. שטח: 90 דקות.</div>
+                    <div><strong>יש שאלות ביניים?</strong><br>כן, קבוצת וואטסאפ פעילה לשאלות ותמיכה.</div>
+                    <div><strong>הקורס פרונטלי?</strong><br>משולב: זום בערבים + שטח בימי שישי.</div>
+                    <div><strong>איזה נייד מתאים?</strong><br>גם אייפון וגם אנדרואיד — כל סמארטפון עם מצלמה בסיסית.</div>
+                    <div><strong>איך משלמים?</strong><br>ביט או פייבוקס למספר הטלפון שיישלח עם האישור.</div>
+                    <div><strong>איך נרשמים?</strong><br>מדברים איתי ישירות בטלפון או בוואטסאפ.</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- קריאה לפעולה -->
+        <section class="cta-buttons section-container">
+            <h2 style="font-size: 2.8rem; margin-bottom: 25px;">הצטרפו עכשיו</h2>
+            <p style="font-size: 1.4em; margin-bottom: 40px; max-width: 700px; margin-inline: auto;">
+                אל תחכו לטיול הבא כדי לצלם טוב יותר. הצטרפו עכשיו ותתחילו לראות תמונות וסרטונים ששווה לשתף!
+            </p>
+            <div>
+                <a href="tel:0527201140" class="cta-button">קראו לי עכשיו: 052-720-1140</a>
+                <a href="https://wa.me/972527201140" class="cta-button">שלחו הודעה בוואטסאפ</a>
+            </div>
+        </section>
+
+        <!-- על אסתי -->
+        <section class="about-section section-container">
+            <h2 style="text-align: center; font-size: 2.5rem; color: var(--color-primary); margin-bottom: 40px;">על אסתי להט</h2>
+            <div class="about-text">
+                שמי אסתי להט, ואני מעבירה סדנאות צילום חווייתיות בנייד כבר מעל 7 שנים – לגיל השלישי, לילדים, לחברות וארגונים ולמטיילים בארץ ובחו"ל.<br><br>
+                ביחד נלמד לצלם תמונות חדות, ייחודיות, יצירתיות ומרגשות, עם הסמארטפון שכבר נמצא אצלכם בכיס. אני מדריכת צילום בנייד עם ניסיון רב בהדרכה, בליווי קבוצות ובהעברת סדנאות חווייתיות בארץ ובחו"ל.
+            </div>
+            <p style="text-align: center; margin-top: 30px;">
+                <a href="https://estiphoto.com" target="_blank" style="color: var(--color-primary); font-weight: bold; font-size: 1.3em; text-decoration: none;">ESTI PHOTO</a>
+            </p>
+        </section>
+    </main>
+
+    <!-- פוטר -->
+    <footer class="footer section-container">
+        <div style="border-top: 1px solid #eee; padding-top: 30px; font-size: 0.95em;">
+            <p>הצהרות ותנאים: הקורס כולל קבוצת וואטסאפ, שימוש באפליקציות חינמיות/משודרגות לפי בחירה, ומפגש מסכם חווייתי. אין חובה לרכוש אפליקציות בתשלום.</p>
+            <p>האתר כולל הצהרת נגישות, ובמידה ונאספים פרטי קשר או מצטרפים לרשימת תפוצה — יש לציין זאת ולכלול אפשרות הסרה, בהתאם לחוק ולמדיניות הפרטיות.</p>
+            <p style="margin-top: 20px;">© 2026 אסתי להט | ESTI PHOTO | כל הזכויות שמורות</p>
+        </div>
+    </footer>
+</body>
+</html>
