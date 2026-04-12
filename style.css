@@ -1110,164 +1110,185 @@ ul {
 /* =====================================
    21. טבלה
    ===================================== */
-/* ===== מה לומדים - טבלה ===== */
+/* ===== מה לומדים - פתרון היברידי: טבלה בדסקטופ, כרטיסים במובייל ===== */
 
-.learn-table-wrap {
-  width: 100%;
-  max-width: 100%;
+.learn-table-section {
   margin-top: 30px;
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
+}
+
+.learn-table-desktop {
+  display: block;
+  width: 100%;
   border-radius: 18px;
+  overflow: hidden;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
 }
 
 .learn-table {
   width: 100%;
-  border-collapse: separate;
-  border-spacing: 0;
+  border-collapse: collapse;
   background-color: #ffffff;
-  border-radius: 18px;
-  table-layout: fixed;
 }
 
 .learn-table thead th {
   background-color: #4B0082;
-  color: #ffffff !important;
+  color: #ffffff;
   font-size: 1.05em;
   font-weight: bold;
-  padding: 18px 14px;
+  padding: 18px 16px;
   text-align: right;
-  border-left: 1px solid rgba(255, 255, 255, 0.18);
-  white-space: normal;
-  word-break: break-word;
-}
-
-.learn-table thead th,
-.learn-table thead th *,
-.learn-table thead td,
-.learn-table thead td * {
-  color: #ffffff !important;
-}
-
-.learn-table thead th:first-child {
-  border-top-right-radius: 18px;
-}
-
-.learn-table thead th:last-child {
-  border-top-left-radius: 18px;
-  border-left: none;
 }
 
 .learn-table tbody td {
-  padding: 16px 14px;
+  padding: 18px 16px;
   font-size: 1em;
   line-height: 1.7;
   color: #555;
   vertical-align: top;
-  text-align: right;
-  background-color: #ffffff;
   border-bottom: 1px solid #e8e1ee;
   border-left: 1px solid #f1ebf6;
-  white-space: normal;
-  word-break: break-word;
-  overflow-wrap: break-word;
+  background-color: #ffffff;
 }
 
 .learn-table tbody tr:nth-child(even) td {
   background-color: #faf7fd;
 }
 
-.learn-table tbody td:last-child {
+.learn-table tbody td:last-child,
+.learn-table thead th:last-child {
   border-left: none;
 }
 
-.learn-table tbody tr:last-child td:first-child {
-  border-bottom-right-radius: 18px;
-}
-
-.learn-table tbody tr:last-child td:last-child {
-  border-bottom-left-radius: 18px;
-}
-
-.learn-table tbody .col-meeting {
-  width: 8%;
+.learn-table .col-meeting {
+  width: 70px;
   text-align: center;
   font-weight: bold;
   color: #333;
 }
 
-.learn-table tbody .col-format {
-  width: 18%;
-  color: #333;
+.learn-table .col-format {
+  width: 150px;
   font-weight: bold;
+  color: #333;
 }
 
-.learn-table tbody .col-topic {
-  width: 42%;
+.learn-table .col-topic {
+  width: 45%;
 }
 
-.learn-table tbody .col-result {
-  width: 32%;
+.learn-table .col-result {
+  width: 28%;
   color: #4B0082;
   font-weight: 600;
 }
 
-.learn-table tbody tr:hover td {
-  background-color: #f3ecf9;
-  transition: background-color 0.3s ease;
+/* כרטיסים למובייל */
+.learn-cards-mobile {
+  display: none;
+  margin-top: 20px;
+}
+
+.learn-card {
+  background-color: #ffffff;
+  border-radius: 18px;
+  padding: 20px 18px;
+  margin-bottom: 18px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+  border: 1px solid #eee6f5;
+}
+
+.learn-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid #f0e6fa;
+}
+
+.learn-card-number {
+  background-color: #4B0082;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 0.95em;
+  padding: 8px 14px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+.learn-card-format {
+  color: #4B0082;
+  font-weight: bold;
+  font-size: 0.95em;
+  text-align: left;
+}
+
+.learn-card-row {
+  margin-bottom: 14px;
+}
+
+.learn-card-row:last-child {
+  margin-bottom: 0;
+}
+
+.learn-card-label {
+  display: block;
+  font-size: 0.82em;
+  font-weight: bold;
+  color: #4B0082;
+  margin-bottom: 6px;
+}
+
+.learn-card-value {
+  font-size: 1em;
+  line-height: 1.7;
+  color: #555;
+}
+
+.learn-card-row.result .learn-card-value {
+  color: #4B0082;
+  font-weight: 600;
 }
 
 @media (max-width: 768px) {
-  .learn-table-wrap {
-    margin-top: 25px;
-    border-radius: 14px;
-    box-shadow: none;
-    border: 1px solid #e8e1ee;
+  .learn-table-desktop {
+    display: none;
   }
 
-  .learn-table {
-    table-layout: fixed;
-  }
-
-  .learn-table thead th {
-    padding: 12px 10px;
-    font-size: 0.9em;
-    line-height: 1.4;
-  }
-
-  .learn-table tbody td {
-    padding: 12px 10px;
-    font-size: 0.9em;
-    line-height: 1.5;
-  }
-
-  .learn-table tbody .col-meeting {
-    width: 10%;
-  }
-
-  .learn-table tbody .col-format {
-    width: 20%;
-  }
-
-  .learn-table tbody .col-topic {
-    width: 38%;
-  }
-
-  .learn-table tbody .col-result {
-    width: 32%;
+  .learn-cards-mobile {
+    display: block;
   }
 }
 
 @media (max-width: 600px) {
-  .learn-table thead th {
-    padding: 10px 8px;
-    font-size: 0.82em;
+  .learn-card {
+    padding: 18px 15px;
+    border-radius: 15px;
   }
 
-  .learn-table tbody td {
-    padding: 10px 8px;
-    font-size: 0.82em;
-    line-height: 1.45;
+  .learn-card-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .learn-card-number {
+    font-size: 0.9em;
+    padding: 7px 12px;
+  }
+
+  .learn-card-format {
+    font-size: 0.92em;
+    text-align: right;
+  }
+
+  .learn-card-label {
+    font-size: 0.8em;
+  }
+
+  .learn-card-value {
+    font-size: 0.95em;
+    line-height: 1.6;
   }
 }
