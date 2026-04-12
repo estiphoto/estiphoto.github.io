@@ -1110,25 +1110,28 @@ ul {
 /* =====================================
    21. טבלה
    ===================================== */
-
 /* ===== מה לומדים - טבלה ===== */
 
 .learn-table-wrap {
+  width: 100%;
+  max-width: 100%;
   margin-top: 30px;
   overflow-x: auto;
+  overflow-y: hidden;
   -webkit-overflow-scrolling: touch;
+  touch-action: pan-x;
   border-radius: 18px;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
 }
 
 .learn-table {
-  width: 100%;
+  width: max-content;
+  min-width: 100%;
   min-width: 760px;
   border-collapse: separate;
   border-spacing: 0;
   background-color: #ffffff;
   border-radius: 18px;
-  overflow: hidden;
 }
 
 .learn-table thead th {
@@ -1142,7 +1145,6 @@ ul {
   white-space: nowrap;
 }
 
-/* מבטיח שכל אלמנט בתוך כותרת הטבלה יישאר לבן */
 .learn-table thead th,
 .learn-table thead th *,
 .learn-table thead td,
@@ -1186,26 +1188,29 @@ ul {
   border-bottom-left-radius: 18px;
 }
 
-.learn-table .col-meeting {
+.learn-table tbody .col-meeting {
   width: 70px;
+  min-width: 70px;
   text-align: center;
   font-weight: bold;
   color: #333;
+  white-space: nowrap;
 }
 
-.learn-table .col-format {
+.learn-table tbody .col-format {
   width: 150px;
+  min-width: 150px;
   white-space: nowrap;
   color: #333;
   font-weight: bold;
 }
 
-.learn-table .col-topic {
-  min-width: 280px;
+.learn-table tbody .col-topic {
+  min-width: 320px;
 }
 
-.learn-table .col-result {
-  min-width: 220px;
+.learn-table tbody .col-result {
+  min-width: 240px;
   color: #4B0082;
   font-weight: 600;
 }
@@ -1215,7 +1220,7 @@ ul {
   transition: background-color 0.3s ease;
 }
 
-/* טאבלט ומובייל */
+/* טאבלט */
 @media (max-width: 768px) {
   .learn-table-wrap {
     margin-top: 25px;
@@ -1223,8 +1228,7 @@ ul {
   }
 
   .learn-table {
-    min-width: 680px;
-    border-radius: 14px;
+    min-width: 700px;
   }
 
   .learn-table thead th {
@@ -1238,23 +1242,34 @@ ul {
     line-height: 1.6;
   }
 
-  .learn-table .col-meeting {
-    width: 56px;
+  .learn-table tbody .col-meeting {
+    min-width: 56px;
   }
 
-  .learn-table .col-format {
-    width: 120px;
+  .learn-table tbody .col-format {
+    min-width: 120px;
+  }
+
+  .learn-table tbody .col-topic {
+    min-width: 260px;
+  }
+
+  .learn-table tbody .col-result {
+    min-width: 190px;
   }
 }
 
+/* מובייל */
 @media (max-width: 600px) {
   .learn-table-wrap {
     margin-top: 20px;
-    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+    border-radius: 12px;
+    box-shadow: none;
+    border: 1px solid #e8e1ee;
   }
 
   .learn-table {
-    min-width: 620px;
+    min-width: 680px;
   }
 
   .learn-table thead th {
@@ -1268,11 +1283,19 @@ ul {
     line-height: 1.6;
   }
 
-  .learn-table .col-topic {
+  .learn-table tbody .col-meeting {
+    min-width: 54px;
+  }
+
+  .learn-table tbody .col-format {
+    min-width: 110px;
+  }
+
+  .learn-table tbody .col-topic {
     min-width: 240px;
   }
 
-  .learn-table .col-result {
+  .learn-table tbody .col-result {
     min-width: 180px;
   }
 }
