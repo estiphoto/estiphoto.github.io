@@ -1133,13 +1133,21 @@ ul {
 
 .learn-table thead th {
   background-color: #4B0082;
-  color: #ffffff;
+  color: #ffffff !important;
   font-size: 1.05em;
   font-weight: bold;
   padding: 18px 16px;
   text-align: right;
   border-left: 1px solid rgba(255, 255, 255, 0.18);
   white-space: nowrap;
+}
+
+/* מבטיח שכל אלמנט בתוך כותרת הטבלה יישאר לבן */
+.learn-table thead th,
+.learn-table thead th *,
+.learn-table thead td,
+.learn-table thead td * {
+  color: #ffffff !important;
 }
 
 .learn-table thead th:first-child {
@@ -1207,7 +1215,7 @@ ul {
   transition: background-color 0.3s ease;
 }
 
-/* מובייל */
+/* טאבלט ומובייל */
 @media (max-width: 768px) {
   .learn-table-wrap {
     margin-top: 25px;
@@ -1219,10 +1227,15 @@ ul {
     border-radius: 14px;
   }
 
-  .learn-table thead th,
+  .learn-table thead th {
+    padding: 14px 12px;
+    font-size: 0.95em;
+  }
+
   .learn-table tbody td {
     padding: 14px 12px;
     font-size: 0.95em;
+    line-height: 1.6;
   }
 
   .learn-table .col-meeting {
@@ -1244,19 +1257,22 @@ ul {
     min-width: 620px;
   }
 
-  .learn-table thead th,
+  .learn-table thead th {
+    padding: 12px 10px;
+    font-size: 0.9em;
+  }
+
   .learn-table tbody td {
     padding: 12px 10px;
     font-size: 0.9em;
     line-height: 1.6;
   }
 
-  .learn-table .col-result {
-    min-width: 180px;
-  }
-
   .learn-table .col-topic {
     min-width: 240px;
   }
-}
 
+  .learn-table .col-result {
+    min-width: 180px;
+  }
+}
