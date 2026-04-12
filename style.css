@@ -1117,21 +1117,18 @@ ul {
   max-width: 100%;
   margin-top: 30px;
   overflow-x: auto;
-  overflow-y: hidden;
   -webkit-overflow-scrolling: touch;
-  touch-action: pan-x;
   border-radius: 18px;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
 }
 
 .learn-table {
-  width: max-content;
-  min-width: 100%;
-  min-width: 760px;
+  width: 100%;
   border-collapse: separate;
   border-spacing: 0;
   background-color: #ffffff;
   border-radius: 18px;
+  table-layout: fixed;
 }
 
 .learn-table thead th {
@@ -1139,10 +1136,11 @@ ul {
   color: #ffffff !important;
   font-size: 1.05em;
   font-weight: bold;
-  padding: 18px 16px;
+  padding: 18px 14px;
   text-align: right;
   border-left: 1px solid rgba(255, 255, 255, 0.18);
-  white-space: nowrap;
+  white-space: normal;
+  word-break: break-word;
 }
 
 .learn-table thead th,
@@ -1162,14 +1160,18 @@ ul {
 }
 
 .learn-table tbody td {
-  padding: 18px 16px;
+  padding: 16px 14px;
   font-size: 1em;
   line-height: 1.7;
   color: #555;
   vertical-align: top;
+  text-align: right;
   background-color: #ffffff;
   border-bottom: 1px solid #e8e1ee;
   border-left: 1px solid #f1ebf6;
+  white-space: normal;
+  word-break: break-word;
+  overflow-wrap: break-word;
 }
 
 .learn-table tbody tr:nth-child(even) td {
@@ -1189,28 +1191,24 @@ ul {
 }
 
 .learn-table tbody .col-meeting {
-  width: 70px;
-  min-width: 70px;
+  width: 8%;
   text-align: center;
   font-weight: bold;
   color: #333;
-  white-space: nowrap;
 }
 
 .learn-table tbody .col-format {
-  width: 150px;
-  min-width: 150px;
-  white-space: nowrap;
+  width: 18%;
   color: #333;
   font-weight: bold;
 }
 
 .learn-table tbody .col-topic {
-  min-width: 320px;
+  width: 42%;
 }
 
 .learn-table tbody .col-result {
-  min-width: 240px;
+  width: 32%;
   color: #4B0082;
   font-weight: 600;
 }
@@ -1220,82 +1218,56 @@ ul {
   transition: background-color 0.3s ease;
 }
 
-/* טאבלט */
 @media (max-width: 768px) {
   .learn-table-wrap {
     margin-top: 25px;
     border-radius: 14px;
-  }
-
-  .learn-table {
-    min-width: 700px;
-  }
-
-  .learn-table thead th {
-    padding: 14px 12px;
-    font-size: 0.95em;
-  }
-
-  .learn-table tbody td {
-    padding: 14px 12px;
-    font-size: 0.95em;
-    line-height: 1.6;
-  }
-
-  .learn-table tbody .col-meeting {
-    min-width: 56px;
-  }
-
-  .learn-table tbody .col-format {
-    min-width: 120px;
-  }
-
-  .learn-table tbody .col-topic {
-    min-width: 260px;
-  }
-
-  .learn-table tbody .col-result {
-    min-width: 190px;
-  }
-}
-
-/* מובייל */
-@media (max-width: 600px) {
-  .learn-table-wrap {
-    margin-top: 20px;
-    border-radius: 12px;
     box-shadow: none;
     border: 1px solid #e8e1ee;
   }
 
   .learn-table {
-    min-width: 680px;
+    table-layout: fixed;
   }
 
   .learn-table thead th {
     padding: 12px 10px;
     font-size: 0.9em;
+    line-height: 1.4;
   }
 
   .learn-table tbody td {
     padding: 12px 10px;
     font-size: 0.9em;
-    line-height: 1.6;
+    line-height: 1.5;
   }
 
   .learn-table tbody .col-meeting {
-    min-width: 54px;
+    width: 10%;
   }
 
   .learn-table tbody .col-format {
-    min-width: 110px;
+    width: 20%;
   }
 
   .learn-table tbody .col-topic {
-    min-width: 240px;
+    width: 38%;
   }
 
   .learn-table tbody .col-result {
-    min-width: 180px;
+    width: 32%;
+  }
+}
+
+@media (max-width: 600px) {
+  .learn-table thead th {
+    padding: 10px 8px;
+    font-size: 0.82em;
+  }
+
+  .learn-table tbody td {
+    padding: 10px 8px;
+    font-size: 0.82em;
+    line-height: 1.45;
   }
 }
