@@ -8,7 +8,7 @@
 
   <meta
     name="description"
-    content="סדנת צילום בנייד מעשית עם אסתי להט בפתח תקווה ובתל אביב, במסגרת חודש התיירות הישראלית 2026. קבוצות קטנות עד 12 משתתפים. 202 ש״ח במקום 270 ש״ח עם הקופון XTRA25."
+    content="סדנת צילום בנייד מעשית עם אסתי להט בפתח תקווה ובתל אביב, במסגרת חודש התיירות הישראלית 2026. קבוצות קטנות עד 12 משתתפים. מחיר מיוחד: 202 ש״ח במקום 270 ש״ח."
   >
 
   <link rel="stylesheet" href="style.css">
@@ -32,8 +32,7 @@
       box-sizing: border-box;
     }
 
-    .tourism-page a:focus-visible,
-    .tourism-page summary:focus-visible {
+    .tourism-page a:focus-visible {
       outline: 3px solid #8b46bb;
       outline-offset: 5px;
     }
@@ -42,10 +41,6 @@
       max-width: 1120px;
       margin-inline: auto;
       padding: 48px 22px;
-    }
-
-    .tourism-page .tour-center {
-      text-align: center;
     }
 
     .tourism-page .tour-intro {
@@ -60,12 +55,35 @@
       text-align: center;
     }
 
+    /* שני הלוגואים בראש הדף */
+    .tourism-page .tour-logos {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 26px;
+      margin: 0 auto 24px;
+    }
+
+    .tourism-page .tour-brand-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 12px;
+    }
+
+    .tourism-page .tour-brand-logo {
+      display: block;
+      width: 105px;
+      max-width: 100%;
+      height: auto;
+    }
+
     .tourism-page .tour-event-logo {
       display: block;
       width: 220px;
-      max-width: 75%;
+      max-width: 100%;
       height: auto;
-      margin: 0 auto 24px;
       border-radius: 10px;
     }
 
@@ -367,6 +385,12 @@
       background: var(--tour-cream);
     }
 
+    /* מרווח לכותרות בעת מעבר מקישור פנימי */
+    .tourism-page #schedule,
+    .tourism-page #booking {
+      scroll-margin-top: 150px;
+    }
+
     @media (max-width: 760px) {
       .tourism-page .tour-columns,
       .tourism-page .tour-cards {
@@ -379,6 +403,18 @@
 
       .tourism-page .tour-tel-aviv {
         padding: 22px 15px;
+      }
+
+      .tourism-page .tour-logos {
+        gap: 18px;
+      }
+
+      .tourism-page .tour-brand-logo {
+        width: 80px;
+      }
+
+      .tourism-page .tour-event-logo {
+        width: 180px;
       }
 
       .tourism-page .tour-table thead {
@@ -429,6 +465,20 @@
         width: 100%;
       }
     }
+
+    @media (max-width: 360px) {
+      .tourism-page .tour-logos {
+        gap: 12px;
+      }
+
+      .tourism-page .tour-brand-logo {
+        width: 65px;
+      }
+
+      .tourism-page .tour-event-logo {
+        width: 155px;
+      }
+    }
   </style>
 </head>
 
@@ -451,17 +501,37 @@
 
   <main>
 
-    <!-- פתיחת הדף -->
+    <!-- ======================================
+         פתיחת הדף ושני הלוגואים
+         ====================================== -->
     <header class="tour-hero">
       <div class="tour-wrap">
 
-        <img
-          src="images/workshops/tourism-month-2026.jpg"
-          alt="חודש התיירות הישראלית"
-          class="tour-event-logo"
-        >
+        <div class="tour-logos">
 
-        <p class="tour-eyebrow">אסתי פוטו בחודש התיירות הישראלית 2026</p>
+          <a
+            href="index.html"
+            class="tour-brand-link"
+            aria-label="אסתי פוטו — חזרה לדף הבית"
+          >
+            <img
+              src="Esti-perple-logo.png"
+              alt="לוגו אסתי פוטו"
+              class="tour-brand-logo"
+            >
+          </a>
+
+          <img
+            src="images/workshops/tourism-month-2026.jpg"
+            alt="חודש התיירות הישראלית"
+            class="tour-event-logo"
+          >
+
+        </div>
+
+        <p class="tour-eyebrow">
+          אסתי פוטו בחודש התיירות הישראלית 2026
+        </p>
 
         <h1>סדנת צילום בנייד מעשית</h1>
 
@@ -469,6 +539,7 @@
           הסמארטפון כבר אצלכם בכיס. עכשיו בואו לגלות מה אפשר ליצור איתו!
           יוצאים יחד לפארק, מתנסים, משחקים עם זוויות ואור,
           ולומדים לראות את הסביבה קצת אחרת —
+          <br>
           בסדנה שמשלבת למידה מעשית, יצירתיות והרבה הנאה.
         </p>
 
@@ -480,7 +551,10 @@
         </ul>
 
         <div class="tour-price-card">
-          <p>מחיר מיוחד למשתתף בסדנאות המפורסמות בעמוד זה</p>
+
+          <p>
+            מחיר מיוחד למשתתף בסדנאות המפורסמות בעמוד זה
+          </p>
 
           <div class="tour-price-line">
             <span>
@@ -492,14 +566,14 @@
           </div>
 
           <p class="tour-price-note">
-            הטבת 25% הנחה, עם עיגול נוסף לטובתכם.<br>
-            למימוש עם הקופון XTRA25 בעת ההרשמה.
+            הטבת 25% הנחה, עם עיגול נוסף לטובתכם.
           </p>
 
           <p class="tour-small">
             ההטבה תקפה לסדנאות בתאריכים 25–28.11.2026
             המפורטות בעמוד זה בלבד, בפתח תקווה ובתל אביב.
           </p>
+
         </div>
 
         <div class="tour-actions">
@@ -515,408 +589,12 @@
       </div>
     </header>
 
-    <!-- תוכן הסדנה והיכרות -->
-    <section class="tour-yellow" aria-labelledby="learn-title">
-      <div class="tour-wrap tour-columns">
-
-        <div>
-          <h2 id="learn-title">לא רק לצלם — ללמוד לראות</h2>
-
-          <p>
-            אני אסתי להט, צלמת ומדריכת צילום בנייד.
-            בסדנאות שלי לומדים בגובה העיניים, בלי להסתבך
-            עם מושגים ובלי להרגיש שצריך להיות “טכנולוגיים”.
-          </p>
-
-          <p>
-            הסדנה מתמקדת בפיתוח יכולות צילום ייחודיות ובדיאלוג עם הסביבה:
-            מגלים נושאים לצילום, בוחרים זוויות מעניינות
-            ומתנסים ביצירת תמונות עם אופי וסיפור.
-          </p>
-
-          <ul class="tour-list">
-            <li>איך למצוא תמונה מעניינת גם במקום שנראה מוכר.</li>
-            <li>איך להשתמש באור, בזוויות ובקומפוזיציה.</li>
-            <li>איך ליצור תמונות יצירתיות עם הנייד שכבר יש לכם.</li>
-            <li>תרגול מעשי, משימות צילום והכוונה במהלך הסדנה.</li>
-            <li>ליווי בקבוצה קטנה, בהתאם לסוג הנייד ולרמת הניסיון.</li>
-          </ul>
-
-          <div class="tour-notice">
-            <p>
-              לא נדרש ידע קודם בצילום.
-              הסדנה מתאימה לכל סוגי הסמארטפונים ולרמות ניסיון שונות.
-              בכל קבוצה עד 12 משתתפים, כדי שאוכל לתת יחס אישי.
-            </p>
-          </div>
-        </div>
-
-        <div>
-          <img
-            src="SALI-093_SMALL.jpg"
-            alt="אסתי להט, צלמת ומדריכת סדנאות צילום בנייד"
-            class="tour-photo"
-            loading="lazy"
-          >
-        </div>
-
-      </div>
-    </section>
-
-    <!-- מועדי סדנאות -->
-    <section id="schedule" class="tour-white" aria-labelledby="schedule-title">
+    <!-- ======================================
+         מועדי הסדנאות בפתח תקווה
+         ====================================== -->
+    <section
+      id="schedule"
+      class="tour-white"
+      aria-labelledby="schedule-title"
+    >
       <div class="tour-wrap">
-
-        <h2 id="schedule-title">בוחרים מועד ויוצאים לצלם</h2>
-
-        <h3>פתח תקווה — הפארק הגדול, פארק יצחק אוחיון</h3>
-
-        <p>
-          סדנאות בוקר ואחר הצהריים, בקבוצות קטנות של 2–12 משתתפים.
-          נקודת המפגש המדויקת תימסר לנרשמים.
-        </p>
-
-        <div class="tour-notice">
-          <p>
-            בוקר חמישי מוקדש לגיל השלישי בלבד:
-            לומדים בקצב נעים, מתרגלים יחד ויוצרים תמונות מדליקות
-            שכיף לשלוח לקבוצת הוואטסאפ המשפחתית!
-          </p>
-        </div>
-
-        <div class="tour-schedule">
-          <table class="tour-table">
-            <caption>סדנאות בפתח תקווה — נובמבר 2026</caption>
-            <thead>
-              <tr>
-                <th scope="col">תאריך</th>
-                <th scope="col">יום</th>
-                <th scope="col">שעות</th>
-                <th scope="col">למי מתאים?</th>
-              </tr>
-            </thead>
-
-            <tbody>
-              <tr>
-                <td data-label="תאריך">25.11.2026</td>
-                <td data-label="יום">רביעי</td>
-                <td data-label="שעות"><span class="tour-time">14:30–16:00</span></td>
-                <td data-label="קהל">הקהל הרחב</td>
-              </tr>
-
-              <tr>
-                <td data-label="תאריך">26.11.2026</td>
-                <td data-label="יום">חמישי</td>
-                <td data-label="שעות"><span class="tour-time">08:00–09:30</span></td>
-                <td data-label="קהל"><span class="tour-audience">לגיל השלישי בלבד</span></td>
-              </tr>
-
-              <tr>
-                <td data-label="תאריך">26.11.2026</td>
-                <td data-label="יום">חמישי</td>
-                <td data-label="שעות"><span class="tour-time">10:00–11:30</span></td>
-                <td data-label="קהל"><span class="tour-audience">לגיל השלישי בלבד</span></td>
-              </tr>
-
-              <tr>
-                <td data-label="תאריך">26.11.2026</td>
-                <td data-label="יום">חמישי</td>
-                <td data-label="שעות"><span class="tour-time">14:30–16:00</span></td>
-                <td data-label="קהל">הקהל הרחב</td>
-              </tr>
-
-              <tr>
-                <td data-label="תאריך">27.11.2026</td>
-                <td data-label="יום">שישי</td>
-                <td data-label="שעות"><span class="tour-time">08:00–09:30</span></td>
-                <td data-label="קהל">הקהל הרחב</td>
-              </tr>
-
-              <tr>
-                <td data-label="תאריך">27.11.2026</td>
-                <td data-label="יום">שישי</td>
-                <td data-label="שעות"><span class="tour-time">10:00–11:30</span></td>
-                <td data-label="קהל">הקהל הרחב</td>
-              </tr>
-
-              <tr>
-                <td data-label="תאריך">28.11.2026</td>
-                <td data-label="יום">שבת</td>
-                <td data-label="שעות"><span class="tour-time">08:00–09:30</span></td>
-                <td data-label="קהל"><span class="tour-audience">סדנה משפחתית — הורים וילדים</span></td>
-              </tr>
-
-              <tr>
-                <td data-label="תאריך">28.11.2026</td>
-                <td data-label="יום">שבת</td>
-                <td data-label="שעות"><span class="tour-time">10:00–11:30</span></td>
-                <td data-label="קהל"><span class="tour-audience">סדנה משפחתית — הורים וילדים</span></td>
-              </tr>
-
-              <tr>
-                <td data-label="תאריך">28.11.2026</td>
-                <td data-label="יום">שבת</td>
-                <td data-label="שעות"><span class="tour-time">14:30–16:00</span></td>
-                <td data-label="קהל"><span class="tour-audience">סדנה משפחתית — הורים וילדים</span></td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-
-        <p>
-          בשבת מצלמים ביחד: פעילות משפחתית כיפית ומגבשת עם כמה משפחות,
-          משימות יצירתיות וזמן משותף של הורים וילדים.
-          כל משתתף מגיע עם נייד משלו.
-        </p>
-
-        <!-- מפגש חד-פעמי בתל אביב -->
-        <section class="tour-tel-aviv" aria-labelledby="tel-aviv-title">
-
-          <span class="tour-tag">מפגש חד־פעמי בתל אביב</span>
-
-          <h3 id="tel-aviv-title">תל אביב, גם אליכם אני מגיעה!</h3>
-
-          <p>
-            ביום שישי נפגשים בגני יהושע לסדנת צילום בנייד מעשית:
-            עוצרים את השגרה, מסתכלים על הפארק מזווית חדשה
-            ומגלים כמה יצירתיות אפשר להוציא מהנייד.
-          </p>
-
-          <p>
-            מפגש אחד במסגרת חודש התיירות, בקבוצה של עד 12 משתתפים —
-            וגם כאן המחיר הוא 202 ש״ח למשתתף עם הקופון XTRA25.
-          </p>
-
-          <div class="tour-schedule">
-            <table class="tour-table">
-              <caption>תל אביב — פארק גני יהושע</caption>
-              <thead>
-                <tr>
-                  <th scope="col">תאריך</th>
-                  <th scope="col">יום</th>
-                  <th scope="col">שעות</th>
-                  <th scope="col">למי מתאים?</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td data-label="תאריך">27.11.2026</td>
-                  <td data-label="יום">שישי</td>
-                  <td data-label="שעות"><span class="tour-time">14:30–16:00</span></td>
-                  <td data-label="קהל">הקהל הרחב</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-
-          <p class="tour-small">
-            נקודת המפגש המדויקת תימסר לנרשמים.
-            ההרשמה מראש ובכפוף לזמינות.
-          </p>
-
-        </section>
-
-        <div class="tour-actions">
-          <a href="#booking" class="tour-button">
-            מצאתי מועד — לשריון מקום
-          </a>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- הכנה והשתתפות -->
-    <section class="tour-yellow" aria-labelledby="prepare-title">
-      <div class="tour-wrap">
-
-        <h2 id="prepare-title">מה צריך לדעת לפני שמגיעים?</h2>
-
-        <div class="tour-cards">
-          <div class="tour-card">
-            <h3>מגיעים מוכנים לצילום</h3>
-            <p>
-              כל משתתף צריך להגיע עם סמארטפון טעון במלואו
-              ועם מקום פנוי בזיכרון לצילום תמונות וסרטונים.
-              הנחיות נוספות יימסרו טלפונית לנרשמים.
-            </p>
-          </div>
-
-          <div class="tour-card">
-            <h3>לומדים בקבוצה קטנה</h3>
-            <p>
-              עד 12 משתתפים בכל סדנה, לקבלת יחס אישי
-              והתאמה לסוגי הניידים ולרמות הניסיון.
-              פתיחת סדנה מותנית בשני משתתפים לפחות.
-            </p>
-          </div>
-
-          <div class="tour-card">
-            <h3>כל משתתף עם כרטיס</h3>
-            <p>
-              המחיר אחיד לכל משתתף, מבוגר או ילד.
-              הפעילות מיועדת לגיל 5 ומעלה.
-              בסדנאות המשפחתיות הילדים משתתפים יחד עם ההורים.
-              כל משתתף מגיע עם נייד משלו.
-            </p>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- קופון והרשמה -->
-    <section id="booking" class="tour-booking" aria-labelledby="booking-title">
-      <div class="tour-wrap">
-
-        <h2 id="booking-title">בואו לגלות מה הנייד שלכם יכול לעשות</h2>
-
-        <p class="tour-intro">
-          בחרו עיר, תאריך ושעה, והתקשרו או שלחו לי הודעה.
-          נבדוק זמינות ונשריין לכם מקום בקבוצה המתאימה.
-        </p>
-
-        <div class="tour-coupon-box">
-          <p>קוד הקופון שלכם לחודש התיירות</p>
-
-          <span class="tour-coupon">XTRA25</span>
-
-          <p>
-            במקום <del>270 ₪</del> — 202 ₪ למשתתף
-          </p>
-
-          <p>
-            ציינו את הקוד בשיחה או בוואטסאפ.
-          </p>
-
-          <a
-            href="tel:0527201140"
-            class="tour-phone"
-            aria-label="להתקשר לאסתי בטלפון 0527201140"
-          >052-7201140</a>
-
-          <div class="tour-actions">
-            <a
-              href="https://wa.me/972527201140?text=שלום%20אסתי%2C%20אשמח%20לשריין%20מקום%20בסדנת%20צילום%20בנייד%20במסגרת%20חודש%20התיירות.%20קוד%20הקופון%20שלי%3A%20XTRA25"
-              class="tour-button"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              לשריון מקום בוואטסאפ
-            </a>
-
-            <a href="tel:0527201140" class="tour-button tour-button-outline">
-              להרשמה טלפונית
-            </a>
-          </div>
-
-          <p class="tour-small">
-            התשלום מלא ומראש.
-            שריון המקום יושלם לאחר אישור זמינות וקבלת התשלום.
-            כפתור הוואטסאפ פותח שיחה ואינו מבצע הזמנה או חיוב.
-          </p>
-        </div>
-
-        <p class="tour-small">
-          הקופון חל על כל הסדנאות המפורטות בעמוד זה
-          בתאריכים 25–28 בנובמבר 2026 בלבד,
-          בפתח תקווה ובתל אביב.
-        </p>
-
-      </div>
-    </section>
-
-    <!-- תנאים: יש לבדוק משפטית לפני פרסום -->
-    <section class="tour-white" aria-labelledby="terms-title">
-      <div class="tour-wrap tour-terms tour-small">
-
-        <h2 id="terms-title">תנאי השתתפות, ביטולים ומזג אוויר</h2>
-
-        <ul class="tour-list">
-          <li>
-            המחיר הוא למשתתף אחד. כל משתתף חייב בכרטיס,
-            לרבות ילדים. הפעילות מיועדת לגיל 5 ומעלה.
-          </li>
-
-          <li>
-            בכל סדנה עד 12 משתתפים.
-            פתיחת הסדנה מותנית בהרשמה של שני משתתפים לפחות.
-          </li>
-
-          <li>
-            ביטול עד 72 שעות לפני תחילת הסדנה — החזר מלא.
-          </li>
-
-          <li>
-            בביטול פחות מ־72 שעות לפני תחילת הסדנה —
-            החזר של 50% מהמחיר ששולם,
-            בכפוף לזכויות הביטול וההחזר המגיעות לפי דין.
-          </li>
-
-          <li>
-            במקרה של גשם, הסדנה תידחה למועד חלופי
-            במהלך 16–19 בדצמבר 2026.
-            המועד והשעה יתואמו מראש לפי זמינות,
-            באותו מקום שבו הייתה אמורה להתקיים הסדנה.
-            אין חובה לבחור באותו יום בשבוע של המועד המקורי.
-          </li>
-
-          <li>
-            לנרשמים המקוריים יישמר מחיר חודש התיירות ששולם,
-            ולא ייגבה תשלום נוסף עבור הסדנה שנדחתה.
-          </li>
-
-          <li>
-            משתתף שאינו יכול להגיע למועד החלופי זכאי להחזר מלא.
-          </li>
-
-          <li>
-            אם לא יירשמו לפחות שני משתתפים,
-            תינתן בחירה בין מעבר למועד חלופי בתיאום מראש,
-            גם מחוץ לתאריכי המיזם ובמחיר ההטבה המקורי,
-            לבין החזר מלוא התשלום.
-          </li>
-
-          <li>
-            נקודת המפגש המדויקת והנחיות נוספות יימסרו לנרשמים.
-            בקשות ביטול ניתן למסור בטלפון או בוואטסאפ
-            במספר 052-7201140.
-          </li>
-
-          <li>
-            התנאים המפורטים אינם גורעים מזכויות הצרכן לפי דין.
-            ככל שהדין מקנה זכות ביטול או החזר מיטיבים יותר,
-            יחולו הוראות הדין.
-          </li>
-        </ul>
-
-      </div>
-    </section>
-
-  </main>
-
-  <footer class="tour-footer">
-    <div class="tour-wrap">
-
-      <p>אסתי פוטו — מצלמים, מתנסים ויוצרים עם הנייד</p>
-
-      <div class="tour-actions">
-        <a href="index.html" class="tour-button tour-button-outline">
-          חזרה לדף הבית
-        </a>
-
-        <a href="recommend.html" class="tour-button tour-button-outline">
-          מה מספרים המשתתפים?
-        </a>
-      </div>
-
-      <div class="accessibility-section">
-        <a href="accessibility.html" class="accessibility-button">
-          הצהרת נגישות
-        </a>
-      </div>
-
-    </div>
-  </footer>
-
-</body>
-</html>
